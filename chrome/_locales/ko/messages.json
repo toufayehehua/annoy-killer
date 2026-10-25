@@ -1,0 +1,158 @@
+{
+  "extName": {
+    "message": "Annoy Killer – 웹페이지 방해 요소 숨기기"
+  },
+  "description": {
+    "message": "방해되는 페이지 요소, 배너와 팝업을 클릭하여 숨기세요. 설정을 저장하고 깔끔한 웹페이지에서 집중하세요."
+  },
+  "actionTitle": {
+    "message": "방해 요소 숨기기"
+  },
+  "options": {
+    "message": "옵션"
+  },
+  "shortcutHeading": {
+    "message": "키보드 단축키"
+  },
+  "toggleExtension": {
+    "message": "확장 프로그램 열기 / 닫기"
+  },
+  "instructions": {
+    "message": "사용 방법"
+  },
+  "coffeePrompt": {
+    "message": "커피 한 잔 후원하기"
+  },
+  "coffeeHeading": {
+    "message": "커피 한 잔 후원하기"
+  },
+  "wechatAlt": {
+    "message": "WeChat 결제 QR 코드"
+  },
+  "wiseAlt": {
+    "message": "WISE 결제 QR 코드"
+  },
+  "wechatDonate": {
+    "message": "WeChat으로 후원"
+  },
+  "donate": {
+    "message": "후원하기"
+  },
+  "coffeeMenu": {
+    "message": "커피 후원"
+  },
+  "feedback": {
+    "message": "의견 보내기"
+  },
+  "orSeparator": {
+    "message": " 또는 "
+  },
+  "doubleTap": {
+    "message": "$1 두 번 누르기"
+  },
+  "refine": {
+    "message": "$1 키를 누르는 동안 웹페이지를 일시적으로 일반 클릭 상태로 사용할 수 있고, $2 키로 선택 범위를 좁히거나 $3 키로 더 좁힐 수 있습니다."
+  },
+  "exitGuide": {
+    "message": "$1 또는 $2 키를 누르면 작업 모드를 종료할 수 있습니다."
+  },
+  "exitUndo": {
+    "message": "$1 또는 $2 키를 누르면 작업 모드를 종료할 수 있습니다. 숨긴 요소는 자동으로 저장됩니다."
+  },
+  "toggleGuide": {
+    "message": "$1 키를 두 번 누르면 확장 프로그램을 열거나 닫습니다. 아이콘을 마우스 오른쪽 버튼으로 클릭 → 옵션에서 키를 변경할 수 있습니다."
+  },
+  "selectGuide": {
+    "message": "일반 웹페이지에서 확장 프로그램 아이콘을 클릭하고, 페이지 영역에 마우스를 올린 뒤 클릭하여 숨기세요."
+  },
+  "previewGuide": {
+    "message": "“표시”를 클릭하면 숨긴 항목을 미리 볼 수 있습니다. 숨긴 항목의 아무 곳이나 클릭하면 복원됩니다."
+  },
+  "resetGuide": {
+    "message": "“초기화”로 페이지의 원래 상태를 미리 보고, “복원”으로 이전의 숨김 상태로 돌아갈 수 있습니다."
+  },
+  "closeGuide": {
+    "message": "안내 닫기"
+  },
+  "toggleHidden": {
+    "message": "숨긴 항목 표시 전환"
+  },
+  "showHidden": {
+    "message": "숨긴 항목 표시"
+  },
+  "show": {
+    "message": "표시"
+  },
+  "reset": {
+    "message": "초기화"
+  },
+  "previewInitial": {
+    "message": "원래 페이지 미리 보기"
+  },
+  "done": {
+    "message": "완료"
+  },
+  "saveChanges": {
+    "message": "변경 사항 저장"
+  },
+  "hiddenCount": {
+    "message": "숨긴 항목: $1"
+  },
+  "restore": {
+    "message": "복원"
+  },
+  "restorePrevious": {
+    "message": "이전 숨김 상태 복원"
+  },
+  "collapseHidden": {
+    "message": "숨긴 항목 접기"
+  },
+  "hide": {
+    "message": "숨기기"
+  },
+  "restoreItem": {
+    "message": "이 숨긴 항목 복원"
+  },
+  "restoreModule": {
+    "message": "이 요소 복원"
+  },
+  "syncRules": {
+    "message": "차단 규칙 동기화"
+  },
+  "syncNoSites": {
+    "message": "동기화된 웹사이트 없음"
+  },
+  "syncViewAll": {
+    "message": "모두 보기"
+  },
+  "syncCollapse": {
+    "message": "접기"
+  },
+  "syncStorageUsage": {
+    "message": "$1 / $2"
+  },
+  "syncLocalFiles": {
+    "message": "로컬 파일"
+  },
+  "syncStatusSynced": {
+    "message": "동기화됨"
+  },
+  "syncStatusPending": {
+    "message": "동기화 대기 중"
+  },
+  "syncStatusPaused": {
+    "message": "일시중지됨"
+  },
+  "syncStatusError": {
+    "message": "동기화 실패"
+  },
+  "syncNow": {
+    "message": "지금 동기화"
+  },
+  "syncingNow": {
+    "message": "동기화 중…"
+  },
+  "syncNote": {
+    "message": "Google 동기화 사용"
+  }
+}
