@@ -1,0 +1,158 @@
+{
+  "extName": {
+    "message": "Annoy Killer – Störende Elemente ausblenden"
+  },
+  "description": {
+    "message": "Blende störende Seitenelemente, Banner und Pop-ups per Klick aus. Speichere deine Auswahl für konzentriertes Surfen."
+  },
+  "actionTitle": {
+    "message": "Störende Elemente ausblenden"
+  },
+  "options": {
+    "message": "Optionen"
+  },
+  "shortcutHeading": {
+    "message": "Tastenkürzel"
+  },
+  "toggleExtension": {
+    "message": "Erweiterung öffnen / schließen"
+  },
+  "instructions": {
+    "message": "Anleitung"
+  },
+  "coffeePrompt": {
+    "message": "Spendiere mir einen Kaffee"
+  },
+  "coffeeHeading": {
+    "message": "Spendiere mir einen Kaffee"
+  },
+  "wechatAlt": {
+    "message": "WeChat-Zahlungscode"
+  },
+  "wiseAlt": {
+    "message": "WISE-Zahlungscode"
+  },
+  "wechatDonate": {
+    "message": "Mit WeChat spenden"
+  },
+  "donate": {
+    "message": "Hier spenden"
+  },
+  "coffeeMenu": {
+    "message": "Kaffee spendieren"
+  },
+  "feedback": {
+    "message": "Feedback senden"
+  },
+  "orSeparator": {
+    "message": " oder "
+  },
+  "doubleTap": {
+    "message": "$1 zweimal drücken"
+  },
+  "refine": {
+    "message": "Halte $1 gedrückt, um vorübergehend normale Mausklicks auf der Webseite zu verwenden. Halte $2 gedrückt, um den Auswahlbereich zu verkleinern, oder $3, um ihn weiter zu verkleinern."
+  },
+  "exitGuide": {
+    "message": "Drücke $1 oder $2, um den Bedienmodus zu verlassen."
+  },
+  "exitUndo": {
+    "message": "Drücke $1 oder $2, um den Bedienmodus zu verlassen. Ausgeblendete Elemente werden automatisch gespeichert."
+  },
+  "toggleGuide": {
+    "message": "Drücke $1 zweimal, um die Erweiterung zu öffnen oder zu schließen. Rechtsklick auf das Erweiterungssymbol → Optionen, um die Taste zu ändern."
+  },
+  "selectGuide": {
+    "message": "Klicke auf einer normalen Webseite auf das Erweiterungssymbol, zeige auf einen Bereich und klicke zum Ausblenden."
+  },
+  "previewGuide": {
+    "message": "Klicke auf „Anzeigen“, um ausgeblendete Elemente zu sehen. Klicke auf ein ausgeblendetes Element, um es wiederherzustellen."
+  },
+  "resetGuide": {
+    "message": "Mit „Zurücksetzen“ siehst du die ursprüngliche Seite. „Wiederherstellen“ stellt den vorherigen Zustand wieder her."
+  },
+  "closeGuide": {
+    "message": "Anleitung schließen"
+  },
+  "toggleHidden": {
+    "message": "Sichtbarkeit ausgeblendeter Elemente umschalten"
+  },
+  "showHidden": {
+    "message": "Ausgeblendete Elemente anzeigen"
+  },
+  "show": {
+    "message": "Anzeigen"
+  },
+  "reset": {
+    "message": "Zurücksetzen"
+  },
+  "previewInitial": {
+    "message": "Ursprüngliche Seite ansehen"
+  },
+  "done": {
+    "message": "Fertig"
+  },
+  "saveChanges": {
+    "message": "Änderungen speichern"
+  },
+  "hiddenCount": {
+    "message": "Ausgeblendete Elemente: $1"
+  },
+  "restore": {
+    "message": "Wiederherstellen"
+  },
+  "restorePrevious": {
+    "message": "Vorherigen Zustand wiederherstellen"
+  },
+  "collapseHidden": {
+    "message": "Ausgeblendete Elemente einklappen"
+  },
+  "hide": {
+    "message": "Ausblenden"
+  },
+  "restoreItem": {
+    "message": "Dieses ausgeblendete Element wiederherstellen"
+  },
+  "restoreModule": {
+    "message": "Dieses Element wiederherstellen"
+  },
+  "syncRules": {
+    "message": "Blockierregeln synchronisieren"
+  },
+  "syncNoSites": {
+    "message": "Keine synchronisierten Websites"
+  },
+  "syncViewAll": {
+    "message": "Alle anzeigen"
+  },
+  "syncCollapse": {
+    "message": "Einklappen"
+  },
+  "syncStorageUsage": {
+    "message": "$1 / $2"
+  },
+  "syncLocalFiles": {
+    "message": "Lokale Dateien"
+  },
+  "syncStatusSynced": {
+    "message": "Synchronisiert"
+  },
+  "syncStatusPending": {
+    "message": "Wartet auf Synchronisierung"
+  },
+  "syncStatusPaused": {
+    "message": "Pausiert"
+  },
+  "syncStatusError": {
+    "message": "Synchronisierung fehlgeschlagen"
+  },
+  "syncNow": {
+    "message": "Jetzt synchronisieren"
+  },
+  "syncingNow": {
+    "message": "Wird synchronisiert…"
+  },
+  "syncNote": {
+    "message": "Verwendet Google Sync"
+  }
+}
