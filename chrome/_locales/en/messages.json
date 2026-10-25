@@ -1,0 +1,158 @@
+{
+  "extName": {
+    "message": "Annoy Killer – Hide Distractions"
+  },
+  "description": {
+    "message": "Hide distracting page elements, banners and popups with a click. Save your choices for cleaner, focused browsing."
+  },
+  "actionTitle": {
+    "message": "Hide distractions"
+  },
+  "options": {
+    "message": "Options"
+  },
+  "shortcutHeading": {
+    "message": "Keyboard shortcut"
+  },
+  "toggleExtension": {
+    "message": "Open / close extension"
+  },
+  "instructions": {
+    "message": "How to use"
+  },
+  "coffeePrompt": {
+    "message": "Buy me a coffee"
+  },
+  "coffeeHeading": {
+    "message": "Buy me a coffee"
+  },
+  "wechatAlt": {
+    "message": "WeChat payment QR code"
+  },
+  "wiseAlt": {
+    "message": "WISE payment QR code"
+  },
+  "wechatDonate": {
+    "message": "Donate with WeChat"
+  },
+  "donate": {
+    "message": "Donate here"
+  },
+  "coffeeMenu": {
+    "message": "Buy me a coffee"
+  },
+  "feedback": {
+    "message": "Send feedback"
+  },
+  "orSeparator": {
+    "message": " or "
+  },
+  "doubleTap": {
+    "message": "Double-tap $1"
+  },
+  "refine": {
+    "message": "Hold $1 to temporarily use normal webpage clicks. Hold $2 to reduce the selection area, or $3 to reduce it further."
+  },
+  "exitGuide": {
+    "message": "Press $1 or $2 to exit operation mode."
+  },
+  "exitUndo": {
+    "message": "Press $1 or $2 to exit operation mode. Hidden elements are saved automatically."
+  },
+  "toggleGuide": {
+    "message": "Double-tap $1 to open or close the extension. Right-click the extension icon → Options to change the key."
+  },
+  "selectGuide": {
+    "message": "On a regular webpage, click the extension icon, point to a page area and click to hide it."
+  },
+  "previewGuide": {
+    "message": "Click “Show” to preview hidden items. Click anywhere on a hidden item to restore it."
+  },
+  "resetGuide": {
+    "message": "Click “Reset” to preview the original page, then “Restore” to return to the previous hidden state."
+  },
+  "closeGuide": {
+    "message": "Close guide"
+  },
+  "toggleHidden": {
+    "message": "Toggle hidden item visibility"
+  },
+  "showHidden": {
+    "message": "Show hidden items"
+  },
+  "show": {
+    "message": "Show"
+  },
+  "reset": {
+    "message": "Reset"
+  },
+  "previewInitial": {
+    "message": "Preview original page"
+  },
+  "done": {
+    "message": "Done"
+  },
+  "saveChanges": {
+    "message": "Save changes"
+  },
+  "hiddenCount": {
+    "message": "Hidden items: $1"
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "restorePrevious": {
+    "message": "Restore previous hidden state"
+  },
+  "collapseHidden": {
+    "message": "Collapse hidden items"
+  },
+  "hide": {
+    "message": "Hide"
+  },
+  "restoreItem": {
+    "message": "Restore this hidden item"
+  },
+  "restoreModule": {
+    "message": "Restore this element"
+  },
+  "syncRules": {
+    "message": "Sync blocked elements"
+  },
+  "syncNoSites": {
+    "message": "No synced websites"
+  },
+  "syncViewAll": {
+    "message": "View all"
+  },
+  "syncCollapse": {
+    "message": "Collapse"
+  },
+  "syncStorageUsage": {
+    "message": "$1 / $2"
+  },
+  "syncLocalFiles": {
+    "message": "Local files"
+  },
+  "syncStatusSynced": {
+    "message": "Synced"
+  },
+  "syncStatusPending": {
+    "message": "Waiting to sync"
+  },
+  "syncStatusPaused": {
+    "message": "Paused"
+  },
+  "syncStatusError": {
+    "message": "Sync failed"
+  },
+  "syncNow": {
+    "message": "Sync now"
+  },
+  "syncingNow": {
+    "message": "Syncing…"
+  },
+  "syncNote": {
+    "message": "Uses Google Sync"
+  }
+}
