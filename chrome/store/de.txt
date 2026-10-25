@@ -1,0 +1,13 @@
+Mit Annoy Killer blendest du störende Webseitenbereiche aus und konzentrierst dich auf das Wesentliche. Wähle unerwünschte Banner, Pop-ups, Seitenleisten oder andere Elemente selbst aus.
+
+Funktionen
+• Klicke auf einer normalen Webseite auf das Erweiterungssymbol, zeige auf einen Bereich und klicke zum Ausblenden.
+• Klicke auf „Anzeigen“, um ausgeblendete Elemente zu sehen. Klicke auf ein ausgeblendetes Element, um es wiederherzustellen.
+• Mit „Zurücksetzen“ siehst du die ursprüngliche Seite. „Wiederherstellen“ stellt den vorherigen Zustand wieder her.
+• Klicke auf „Fertig“ oder drücke Enter zum Speichern. Ausgeblendete Elemente bleiben nach dem Neuladen ausgeblendet.
+
+Ausblendregeln werden lokal gespeichert und standardmäßig über Chrome Sync auf Geräten mit demselben Google-Konto und aktiviertem Chrome Sync synchronisiert. Die Regelsynchronisierung lässt sich in den Optionen ausschalten; Tastenkürzel bleiben lokal. Kein separates Erweiterungskonto und keine Analyse- oder Werbetracker. Temporäre Seitenaufnahmen für die Auflösungsanimation werden auf deinem Gerät verarbeitet und nicht hochgeladen.
+
+Dies ist ein manueller Element-Ausblender, kein Netzwerk-Werbeblocker. Er blockiert nicht jede Werbung und umgeht keine Bezahlschranken. Nach Webseitenänderungen müssen Regeln eventuell angepasst werden. Interne Chrome-Seiten und der Chrome Web Store sind nicht unterstützt.
+
+Die Oberfläche folgt der Chrome-Sprache; ersatzweise wird Englisch verwendet. Unterstützt Englisch, vereinfachtes und traditionelles Chinesisch, Japanisch, Koreanisch, Deutsch, Französisch, Spanisch und brasilianisches Portugiesisch.

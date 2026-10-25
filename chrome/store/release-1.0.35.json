@@ -1,0 +1,20 @@
+{
+  "version": "1.0.35",
+  "itemId": "pcijplaemendlfdkkhacpjinpimoplce",
+  "status": "pending_review",
+  "changes": [
+    "Default-on Chrome rule synchronization with per-device switch",
+    "Merge additions and synchronize deletions and visible exceptions",
+    "Remove shortcut reset-to-default button",
+    "Include currently prepared same-origin component sharing"
+  ],
+  "package": "dist/annoy-killer-chrome-1.0.35.zip",
+  "packageSha256": "9354e333685d76418fc7335d4a112d5cff89d25f2ae4bd239ced4da291c4738b",
+  "validationFile": "validation-1.0.35.json",
+  "privacyPolicy": "Updated locally, published at the existing Google Sites URL and verified on the public page on 2026-09-07",
+  "dashboardConfirmation": "Chrome Web Store developer dashboard shows draft version 1.0.35; status: 待审核; published version remains 1.0.33",
+  "autoPublishAfterApproval": true,
+  "uploaded": true,
+  "submittedForReview": true,
+  "recordedAt": "2026-09-07T15:55:56+00:00"
+}

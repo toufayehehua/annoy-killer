@@ -1,0 +1,15 @@
+{
+  "version": "1.0.33",
+  "itemId": "pcijplaemendlfdkkhacpjinpimoplce",
+  "status": "pending_review",
+  "change": "Show coffee prompt every five picker openings, including after a donation-entry visit.",
+  "package": "dist/annoy-killer-chrome-1.0.33.zip",
+  "packageSha256": "592849c24ba7197e7bda782a2c0e98572b910560497ef6c84ace594138d1540d",
+  "validationFile": "validation-1.0.33.json",
+  "e2ePassed": 47,
+  "e2eTotal": 47,
+  "recordedAt": "2026-09-07T11:26:54.702226+00:00",
+  "autoPublishAfterApproval": true,
+  "previousPublishedVersion": "1.0.32",
+  "dashboardConfirmation": "已将您的扩展程序提交送审；状态：待审核；草稿版本：1.0.33"
+}

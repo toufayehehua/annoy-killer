@@ -1,0 +1,13 @@
+O Annoy Killer oculta elementos indesejados de sites para você se concentrar na leitura. Selecione banners, pop-ups, barras laterais ou outras áreas que deseja ocultar.
+
+Recursos
+• Em uma página comum, clique no ícone da extensão, aponte para uma área e clique para ocultá-la.
+• Clique em “Mostrar” para visualizar itens ocultos. Clique em um item oculto para restaurá-lo.
+• Clique em “Redefinir” para visualizar a página original e em “Restaurar” para voltar ao estado oculto anterior.
+• Clique em “Concluir” ou pressione Enter para salvar. Os itens continuam ocultos após recarregar a página.
+
+As regras são salvas localmente e sincronizadas por padrão pelo Chrome Sync entre dispositivos com a mesma conta Google e a sincronização do Chrome ativada. Você pode desativar a sincronização de regras nas opções; os atalhos continuam locais. Sem conta adicional para a extensão nem rastreadores de análise ou publicidade. Capturas temporárias para a animação são processadas no seu dispositivo e não são enviadas a servidores.
+
+É uma ferramenta manual para ocultar elementos, não um bloqueador de anúncios de rede. Não bloqueia todos os anúncios nem contorna conteúdo pago. Mudanças nos sites podem exigir novas regras. Não funciona em páginas internas do Chrome nem na Chrome Web Store.
+
+A interface acompanha o idioma do Chrome, com inglês como alternativa. Oferece inglês, chinês simplificado e tradicional, japonês, coreano, alemão, francês, espanhol e português do Brasil.

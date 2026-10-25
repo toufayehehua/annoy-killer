@@ -1,0 +1,13 @@
+Annoy Killer masque les éléments gênants des sites pour vous aider à vous concentrer sur votre lecture. Sélectionnez vous-même les bannières, pop-ups, barres latérales ou autres zones à masquer.
+
+Fonctionnalités
+• Sur une page web classique, cliquez sur l’icône de l’extension, pointez une zone et cliquez pour la masquer.
+• Cliquez sur « Afficher » pour voir les éléments masqués. Cliquez sur un élément masqué pour le rétablir.
+• Cliquez sur « Réinitialiser » pour voir la page d’origine, puis sur « Rétablir » pour revenir à l’état précédent.
+• Cliquez sur « Terminé » ou appuyez sur Enter pour enregistrer. Les éléments restent masqués après actualisation.
+
+Les règles sont enregistrées localement et synchronisées par défaut via Chrome Sync entre les appareils utilisant le même compte Google avec la synchronisation Chrome activée. Vous pouvez désactiver la synchronisation des règles dans les options ; les raccourcis restent locaux. Aucun compte supplémentaire pour l’extension ni traceur publicitaire ou analytique. Les captures temporaires de l’animation sont traitées sur votre appareil, sans envoi à un serveur.
+
+Cet outil masque manuellement les éléments et ne bloque pas les requêtes publicitaires. Il ne bloque pas toutes les publicités et ne contourne pas les accès payants. Les règles peuvent nécessiter une mise à jour si le site change. Les pages internes de Chrome et le Chrome Web Store ne sont pas pris en charge.
+
+L’interface suit la langue de Chrome, avec l’anglais par défaut. Langues : anglais, chinois simplifié et traditionnel, japonais, coréen, allemand, français, espagnol et portugais brésilien.

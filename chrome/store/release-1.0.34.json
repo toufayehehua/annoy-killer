@@ -1,0 +1,12 @@
+{
+  "version": "1.0.34",
+  "itemId": "pcijplaemendlfdkkhacpjinpimoplce",
+  "status": "prepared_not_uploaded",
+  "change": "Reuse uniquely identified components across pages on the same origin, with page-specific restoration exceptions and conservative legacy-rule compatibility.",
+  "package": "dist/annoy-killer-chrome-1.0.34.zip",
+  "packageSha256": "b6cb2878068c05f1c75119db013d1ac4976fbd7b898191e32224d2b7d26475d1",
+  "packageValidation": "9 locales; 23 runtime files; ZIP integrity and source equality verified.",
+  "functionalTesting": "No further functional tests run for this release, per user instruction. Prior focused sharing tests passed; the broader run was stopped with failures and is not claimed as passing.",
+  "uploadBlocker": "Browser navigation to the Chrome Web Store developer dashboard returned Not allowed twice.",
+  "recordedAt": "2026-09-07T15:09:17.573512+00:00"
+}

@@ -1,0 +1,89 @@
+{
+  "version": "1.0.35",
+  "recordedAt": "2026-09-07T15:32:51.486795+00:00",
+  "package": "dist/annoy-killer-chrome-1.0.35.zip",
+  "packageSha256": "9354e333685d76418fc7335d4a112d5cff89d25f2ae4bd239ced4da291c4738b",
+  "runtimeFiles": 24,
+  "locales": 9,
+  "zipIntegrityPassed": true,
+  "packageMatchesSource": true,
+  "sourceSha256": {
+    "manifest.json": "bb87eadf118088261b9663ac3c889711352ac37e0168f4b5a0b04ea887328cf9",
+    "background.js": "ad055c6eda0438214c513637f1a44406d5ea17b4ba6e5912fb3e4561ff377bb7",
+    "content.js": "a7a324b5002b4999b65c4bc6203d448733f6a644047aaeb4ca199f84d119f903",
+    "rules.js": "83cffc0f852590fc42758da103827218f2a0aef257b73c4e91d17e3efc9e5ede",
+    "sync.js": "7d8c8720b19263eba90b3cf5e76f558f1c70dba9b232282807834ad0eb863735",
+    "shortcuts.js": "c847fde305e527c8afeb8803519022eaf7adbab89076e7b2f2e65872f65aa35a",
+    "options.html": "7969d54a149b2dd9bbc05671c2088e95fb5508f0c3325db435df4ece8e6026eb",
+    "options.js": "92c05b5bc7f524e0c978dba1b4dd863790b555f0e059376617660b7909ab89ae",
+    "options.css": "7e1d6a2f4421119475569d820a72f2b35061507b17212a3d13e13c0d7c754555",
+    "icons/icon-16.png": "63c8675e4067dbd210bffd8eb957a9a1d3e8fa939655679a2d25e99b27b769f4",
+    "icons/icon-32.png": "47b9bb56e58769724f95c955f30545a3e66cc463074414fee1700c1a67cb5186",
+    "icons/icon-48.png": "75ebcfebc03318cf465b952142d916e75ba1555338cf43962a846e29f829d5fc",
+    "icons/icon-128.png": "acdbb8878fa033539f68234f1d574d1f504e6b237020fe7582233fb2e5c2929d",
+    "images/wechat-pay.png": "488c8f3da0d0c317c20e85c1f8ee46239f33e699ee7ab6588ba37775928c643e",
+    "images/wise-pay.png": "5e1a6f518a4705da5d61c12e339b82349b37d3e300faedd029d5c9e9b0cc8688",
+    "_locales/de/messages.json": "7f89ed9b09e1cbc3e8dadc87838161359b54105a33fed048041886d18d648b49",
+    "_locales/en/messages.json": "4a31093057550a4ce2261285ee92e5df9721b19d4283f7812993a36cc1e00ff8",
+    "_locales/es/messages.json": "30b8242d578a5ca4391cb34607a9f166b95c6484e5d90d4511cb3c6dfc34d77e",
+    "_locales/fr/messages.json": "8e1f53de562e4608f918c7fe25fd482e3dac5b2e0be6c5462294ee7a6399d063",
+    "_locales/ja/messages.json": "e55e248da72be9911cfa201078c21a74e7fea68ffe061f76b413b9ff58e91c6c",
+    "_locales/ko/messages.json": "ae3851da0a153c03487f7be10314aa6b3c543f86dbaec7760be84dbc483aff6d",
+    "_locales/pt_BR/messages.json": "4a2bfa5db7a1bbf31795fc2e5fc9a365317bf998c6c30ab4cec99a3ce32bd74f",
+    "_locales/zh_CN/messages.json": "ee9b83e71768c3adfa4f6e4e4c5746d94229c2e2810e7c9821b12e8e2e341f44",
+    "_locales/zh_TW/messages.json": "4ae8da9423f9af81fd6ea684949d95f57095d989b97f436f5d41d06a6b886252"
+  },
+  "syncLogicTests": {
+    "passed": 8,
+    "total": 8,
+    "rerunAt": "2026-09-07T15:32:51.486795+00:00"
+  },
+  "upgradeGuidanceTest": "passed",
+  "focusedChromeChecks": [
+    {
+      "kind": "sync",
+      "chrome": "Chrome/152.0.7977.82",
+      "extensionId": "flncdgodmojfojhlbnemkpkkdfolhnne",
+      "generatedAt": "2026-09-07T15:23:40.300Z",
+      "cases": [
+        {
+          "name": "屏蔽规则同步默认开启、开关持久化与远端恢复",
+          "ok": true,
+          "duration": 1277
+        }
+      ]
+    },
+    {
+      "kind": "shortcut",
+      "chrome": "Chrome/152.0.7977.82",
+      "extensionId": "flncdgodmojfojhlbnemkpkkdfolhnne",
+      "generatedAt": "2026-09-07T15:26:45.376Z",
+      "cases": [
+        {
+          "name": "双击快捷键开关、误触防护与设置持久化",
+          "ok": true,
+          "duration": 2419
+        }
+      ]
+    },
+    {
+      "kind": "animation-rerun",
+      "chrome": "Chrome/152.0.7977.82",
+      "extensionId": "flncdgodmojfojhlbnemkpkkdfolhnne",
+      "generatedAt": "2026-09-07T15:23:59.277Z",
+      "cases": [
+        {
+          "name": "附件闭眼图标、眼皮开合顺序与白色毛玻璃",
+          "ok": true,
+          "duration": 1954
+        }
+      ]
+    }
+  ],
+  "broaderChromeRun": {
+    "passed": 42,
+    "total": 51,
+    "note": "Not a passing full regression. Against a temporary pre-sync baseline, seven failures reproduced at the same assertion; another scene failed at a different assertion; the opacity scene passed on baseline and an isolated current-source rerun. Not all failures are attributed or fixed."
+  },
+  "googleCloudTwoDeviceTest": "not performed"
+}

@@ -1,0 +1,248 @@
+{
+  "chrome": "Chrome/152.0.7977.82",
+  "extensionId": "flncdgodmojfojhlbnemkpkkdfolhnne",
+  "generatedAt": "2026-09-07T11:10:21.549Z",
+  "cases": [
+    {
+      "name": "每打开五次显示咖啡气泡且点击后继续按周期展示",
+      "ok": true,
+      "duration": 8986
+    },
+    {
+      "name": "首次快捷键引导只显示一次",
+      "ok": true,
+      "duration": 1266
+    },
+    {
+      "name": "视觉区块纯图标按钮与默认范围保底",
+      "ok": true,
+      "duration": 3780
+    },
+    {
+      "name": "视觉区块导航每一项可独立隐藏",
+      "ok": true,
+      "duration": 6435
+    },
+    {
+      "name": "视觉区块真实 SVG NEW 标签整体选择",
+      "ok": true,
+      "duration": 2222
+    },
+    {
+      "name": "视觉区块小标签整体选择",
+      "ok": true,
+      "duration": 2960
+    },
+    {
+      "name": "视觉区块选择与单项隐藏",
+      "ok": true,
+      "duration": 1834
+    },
+    {
+      "name": "真实 action、默认大块、页面事件抑制、Escape 撤销",
+      "ok": true,
+      "duration": 290
+    },
+    {
+      "name": "Escape 取消并恢复",
+      "ok": true,
+      "duration": 562
+    },
+    {
+      "name": "工具栏任意位置拖动且不误触按钮",
+      "ok": true,
+      "duration": 740
+    },
+    {
+      "name": "工具栏按钮右侧文案、状态切换与窄屏布局",
+      "ok": true,
+      "duration": 1862
+    },
+    {
+      "name": "工具栏毛玻璃真实后景模糊与透色",
+      "ok": true,
+      "duration": 985
+    },
+    {
+      "name": "普通鼠标与已隐藏项目预览切换",
+      "ok": true,
+      "duration": 3262
+    },
+    {
+      "name": "重置恢复往返保留历史和本次隐藏且仅完成保存",
+      "ok": true,
+      "duration": 4011
+    },
+    {
+      "name": "恢复按钮常驻且可在关闭预览时恢复全部",
+      "ok": true,
+      "duration": 1733
+    },
+    {
+      "name": "预览模块任意位置切换、内部按钮与拖动保护",
+      "ok": true,
+      "duration": 2457
+    },
+    {
+      "name": "附件闭眼图标、眼皮开合顺序与白色毛玻璃",
+      "ok": true,
+      "duration": 1934
+    },
+    {
+      "name": "闭眼图标无圆底、平滑过渡与快速切换清理",
+      "ok": true,
+      "duration": 4123
+    },
+    {
+      "name": "闭眼图标粗描边、随模块缩放并限制上限",
+      "ok": true,
+      "duration": 1222
+    },
+    {
+      "name": "闭眼遮罩覆盖 Shadow DOM、iframe 并跟随滚动裁切",
+      "ok": true,
+      "duration": 2015
+    },
+    {
+      "name": "恢复全部历史隐藏项目并更新总数",
+      "ok": true,
+      "duration": 2756
+    },
+    {
+      "name": "完成按钮、刷新持久化",
+      "ok": true,
+      "duration": 836
+    },
+    {
+      "name": "Enter 完成、刷新持久化与空会话关闭",
+      "ok": true,
+      "duration": 892
+    },
+    {
+      "name": "双击快捷键开关、误触防护与设置持久化",
+      "ok": true,
+      "duration": 2176
+    },
+    {
+      "name": "真实 action 再点只关闭且不保存",
+      "ok": true,
+      "duration": 1626
+    },
+    {
+      "name": "页面事件 pointer/click/contextmenu 全抑制",
+      "ok": true,
+      "duration": 548
+    },
+    {
+      "name": "inline display!important 会话隐藏、精确恢复与持久化停用",
+      "ok": true,
+      "duration": 2168
+    },
+    {
+      "name": "规则恢复：动态ID、祖先变化、延迟加载与歧义保护",
+      "ok": true,
+      "duration": 2190
+    },
+    {
+      "name": "规则恢复：动态类名、祖先变化、延迟加载与歧义保护",
+      "ok": true,
+      "duration": 2271
+    },
+    {
+      "name": "规则恢复：延迟 Shadow Root、宿主变化与纯文本更新",
+      "ok": true,
+      "duration": 1234
+    },
+    {
+      "name": "规则恢复：iframe 属性更新与旧规则兼容",
+      "ok": true,
+      "duration": 300
+    },
+    {
+      "name": "fallback 精确规则跨 text/src/子内容变化与刷新",
+      "ok": true,
+      "duration": 810
+    },
+    {
+      "name": "全屏覆盖弹窗默认选择与遮罩整体隐藏 nested",
+      "ok": true,
+      "duration": 1683
+    },
+    {
+      "name": "全屏覆盖弹窗默认选择与遮罩整体隐藏 portal",
+      "ok": true,
+      "duration": 1634
+    },
+    {
+      "name": "全屏覆盖弹窗默认选择与遮罩整体隐藏 siblings",
+      "ok": true,
+      "duration": 1617
+    },
+    {
+      "name": "全屏覆盖弹窗识别不误选普通应用外壳",
+      "ok": true,
+      "duration": 383
+    },
+    {
+      "name": "dialog 与 popover top-layer 上方 picker 可操作并隐藏弹层",
+      "ok": true,
+      "duration": 851
+    },
+    {
+      "name": "截图期间透明捕获层持续抑制真实 pointer/click",
+      "ok": true,
+      "duration": 1014
+    },
+    {
+      "name": "SPA push/replace/back 页面规则切换",
+      "ok": true,
+      "duration": 665
+    },
+    {
+      "name": "同源与跨源 iframe host 选择",
+      "ok": true,
+      "duration": 1377
+    },
+    {
+      "name": "嵌套 open shadow 精细选择与持久化",
+      "ok": true,
+      "duration": 1481
+    },
+    {
+      "name": "粒子 Canvas 真实像素、演化、时序",
+      "ok": true,
+      "duration": 1943
+    },
+    {
+      "name": "录屏参考尺寸与粒子资源上限",
+      "ok": true,
+      "duration": 5289
+    },
+    {
+      "name": "四倍 CPU 降速下粒子动画保持响应",
+      "ok": true,
+      "duration": 1356
+    },
+    {
+      "name": "reduced-motion 不渲染粒子但仍隐藏",
+      "ok": true,
+      "duration": 764
+    },
+    {
+      "name": "点击后立即完成无竞态丢失",
+      "ok": true,
+      "duration": 855
+    },
+    {
+      "name": "双标签并发完成不互相覆盖",
+      "ok": true,
+      "duration": 6414
+    }
+  ],
+  "version": "1.0.33",
+  "package": "dist/annoy-killer-chrome-1.0.33.zip",
+  "packageSha256": "592849c24ba7197e7bda782a2c0e98572b910560497ef6c84ace594138d1540d",
+  "packageRuntimeFiles": 23,
+  "packageMatchesSource": true,
+  "zipIntegrityPassed": true
+}
