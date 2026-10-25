@@ -1,0 +1,56 @@
+[
+  {
+    "file": "store/artwork/en/marquee-promo-1400x560.png",
+    "width": 1400,
+    "height": 560,
+    "bytes": 1302008
+  },
+  {
+    "file": "store/artwork/en/screenshot-after-1280x800.png",
+    "width": 1280,
+    "height": 800,
+    "bytes": 946840
+  },
+  {
+    "file": "store/artwork/en/screenshot-before-1280x800.png",
+    "width": 1280,
+    "height": 800,
+    "bytes": 773012
+  },
+  {
+    "file": "store/artwork/en/screenshot-particles-1280x800.png",
+    "width": 1280,
+    "height": 800,
+    "bytes": 1806212
+  },
+  {
+    "file": "store/artwork/en/small-promo-440x280.png",
+    "width": 440,
+    "height": 280,
+    "bytes": 254909
+  },
+  {
+    "file": "store/artwork/zh_CN/screenshot-after-1280x800.png",
+    "width": 1280,
+    "height": 800,
+    "bytes": 947202
+  },
+  {
+    "file": "store/artwork/zh_CN/screenshot-before-1280x800.png",
+    "width": 1280,
+    "height": 800,
+    "bytes": 772731
+  },
+  {
+    "file": "store/artwork/zh_CN/screenshot-particles-1280x800.png",
+    "width": 1280,
+    "height": 800,
+    "bytes": 1097139
+  },
+  {
+    "file": "store/artwork/zh_CN/small-promo-440x280.png",
+    "width": 440,
+    "height": 280,
+    "bytes": 143325
+  }
+]
