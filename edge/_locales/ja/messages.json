@@ -1,0 +1,158 @@
+{
+  "extName": {
+    "message": "Annoy Killer – 不要なページ要素を非表示"
+  },
+  "description": {
+    "message": "邪魔なページ要素、バナー、ポップアップをクリックで非表示に。設定を保存して、すっきりしたページで閲覧に集中。"
+  },
+  "actionTitle": {
+    "message": "邪魔な要素を非表示"
+  },
+  "options": {
+    "message": "オプション"
+  },
+  "shortcutHeading": {
+    "message": "キーボードショートカット"
+  },
+  "toggleExtension": {
+    "message": "拡張機能を開く / 閉じる"
+  },
+  "instructions": {
+    "message": "使い方"
+  },
+  "coffeePrompt": {
+    "message": "コーヒーで応援"
+  },
+  "coffeeHeading": {
+    "message": "コーヒーで応援"
+  },
+  "wechatAlt": {
+    "message": "WeChat 支払い用 QR コード"
+  },
+  "wiseAlt": {
+    "message": "WISE 支払い用 QR コード"
+  },
+  "wechatDonate": {
+    "message": "WeChat で支援"
+  },
+  "donate": {
+    "message": "こちらから支援"
+  },
+  "coffeeMenu": {
+    "message": "コーヒーで応援"
+  },
+  "feedback": {
+    "message": "フィードバック"
+  },
+  "orSeparator": {
+    "message": " または "
+  },
+  "doubleTap": {
+    "message": "$1 を2回押す"
+  },
+  "refine": {
+    "message": "$1 キーを押している間は一時的にウェブページを通常どおりクリックでき、$2 キーで選択範囲を狭く、$3 キーでさらに狭くできます。"
+  },
+  "exitGuide": {
+    "message": "$1 または $2 キーで操作モードを終了できます。"
+  },
+  "exitUndo": {
+    "message": "$1 または $2 キーで操作モードを終了できます。非表示にした要素は自動保存されます。"
+  },
+  "toggleGuide": {
+    "message": "$1 を2回押すと拡張機能を開閉できます。拡張機能アイコンを右クリック → オプションでキーを変更できます。"
+  },
+  "selectGuide": {
+    "message": "通常のウェブページで拡張機能アイコンをクリックし、隠したい範囲にマウスを合わせてクリックします。"
+  },
+  "previewGuide": {
+    "message": "「表示」で非表示の項目を確認できます。項目内をクリックすると元に戻ります。"
+  },
+  "resetGuide": {
+    "message": "「リセット」でページの初期状態を確認し、「復元」でリセット前の非表示状態に戻せます。"
+  },
+  "closeGuide": {
+    "message": "ガイドを閉じる"
+  },
+  "toggleHidden": {
+    "message": "非表示項目の表示を切り替え"
+  },
+  "showHidden": {
+    "message": "非表示の項目を表示"
+  },
+  "show": {
+    "message": "表示"
+  },
+  "reset": {
+    "message": "リセット"
+  },
+  "previewInitial": {
+    "message": "ページの初期状態を確認"
+  },
+  "done": {
+    "message": "完了"
+  },
+  "saveChanges": {
+    "message": "変更を保存"
+  },
+  "hiddenCount": {
+    "message": "非表示の項目：$1"
+  },
+  "restore": {
+    "message": "復元"
+  },
+  "restorePrevious": {
+    "message": "以前の非表示状態に戻す"
+  },
+  "collapseHidden": {
+    "message": "非表示項目を折りたたむ"
+  },
+  "hide": {
+    "message": "隠す"
+  },
+  "restoreItem": {
+    "message": "この非表示項目を元に戻す"
+  },
+  "restoreModule": {
+    "message": "この要素を元に戻す"
+  },
+  "syncRules": {
+    "message": "非表示ルールを同期"
+  },
+  "syncNoSites": {
+    "message": "同期済みのサイトはありません"
+  },
+  "syncViewAll": {
+    "message": "すべて表示"
+  },
+  "syncCollapse": {
+    "message": "折りたたむ"
+  },
+  "syncStorageUsage": {
+    "message": "$1 / $2"
+  },
+  "syncLocalFiles": {
+    "message": "ローカルファイル"
+  },
+  "syncStatusSynced": {
+    "message": "同期済み"
+  },
+  "syncStatusPending": {
+    "message": "同期待ち"
+  },
+  "syncStatusPaused": {
+    "message": "一時停止中"
+  },
+  "syncStatusError": {
+    "message": "同期に失敗"
+  },
+  "syncNow": {
+    "message": "今すぐ同期"
+  },
+  "syncingNow": {
+    "message": "同期中…"
+  },
+  "syncNote": {
+    "message": "Microsoft Edge Sync を使用"
+  }
+}
