@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>干扰项隐藏器 E2E 主测试页</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #e8eef8;
+      color: #12233f;
+    }
+
+    * { box-sizing: border-box; }
+
+    /* 模拟部分 Chromium/网页样式把顶层 popover 宿主强制隐藏。扩展必须
+       通过自己的 inline important 样式保持选择层可见。 */
+    [data-annoy-killer-ui] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+
+    body {
+      margin: 0;
+      min-width: 760px;
+      padding: 78px 28px 64px;
+      background:
+        radial-gradient(circle at 15% 8%, rgba(102, 126, 234, 0.24), transparent 30rem),
+        linear-gradient(145deg, #f8fbff 0%, #e5ecf8 54%, #f4f7fc 100%);
+    }
+
+    h1, h2, p { margin: 0; }
+
+    .fixture-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      max-width: 1120px;
+      margin: 0 auto 24px;
+    }
+
+    .fixture-header h1 { font-size: 25px; letter-spacing: -0.02em; }
+
+    #route-indicator {
+      padding: 8px 12px;
+      border: 1px solid #c9d5e9;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #49617f;
+      font: 600 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .test-group {
+      min-height: 214px;
+      padding: 18px;
+      border: 1px solid rgba(124, 145, 177, 0.28);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 16px 45px rgba(40, 61, 99, 0.10);
+    }
+
+    .test-group > h2 {
+      margin-bottom: 14px;
+      color: #5b6f8e;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    #bulk-group { grid-column: 1 / -1; }
+
+    .bulk-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .bulk-card {
+      min-height: 126px;
+      padding: 25px 27px;
+      border: 1px solid rgba(37, 90, 185, 0.22);
+      border-radius: 18px;
+      background: linear-gradient(135deg, #dce9ff, #f8fbff);
+      box-shadow: 0 8px 22px rgba(54, 91, 155, 0.12);
+    }
+
+    .bulk-card:nth-child(2) {
+      background: linear-gradient(135deg, #e4ddff, #fbf9ff);
+    }
+
+    .bulk-label {
+      display: inline-block;
+      padding: 9px 12px;
+      border-radius: 10px;
+      background: #1f5fce;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .bulk-note {
+      display: block;
+      margin-top: 13px;
+      color: #58708f;
+      font-size: 13px;
+    }
+
+    #fine-panel {
+      width: 100%;
+      min-height: 148px;
+      padding: 38px 30px;
+      border: 2px solid #d4dfef;
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    #fine-panel > .fine-target {
+      display: inline-block;
+      min-width: 148px;
+      padding: 12px 17px;
+      border-radius: 9px;
+      background: #ffe7a8;
+      color: #593f00;
+      font-weight: 750;
+    }
+
+    #unique-target {
+      min-height: 148px;
+      display: grid;
+      place-items: center;
+      border: 2px dashed #71a08a;
+      border-radius: 18px;
+      background: #e2faef;
+      color: #155a40;
+      font-weight: 750;
+    }
+
+    #event-target {
+      width: 100%;
+      min-height: 92px;
+      border: 0;
+      border-radius: 16px;
+      background: #253958;
+      color: white;
+      font: 750 16px/1 system-ui, sans-serif;
+      cursor: pointer;
+    }
+
+    #event-readout {
+      display: block;
+      margin-top: 12px;
+      color: #526986;
+      font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    #particle-group { grid-column: 1 / -1; }
+
+    #particle-target {
+      position: relative;
+      isolation: isolate;
+      width: 100%;
+      height: 190px;
+      overflow: hidden;
+      border: 6px solid #101932;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 13% 28%, #fff36a 0 7%, transparent 7.5%),
+        radial-gradient(circle at 80% 67%, #64ffbd 0 9%, transparent 9.5%),
+        repeating-conic-gradient(from 18deg at 52% 46%, #ff3f81 0 10deg, #7e5cff 10deg 20deg, #31c9ff 20deg 30deg, #ff9838 30deg 40deg);
+      box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.8), 0 15px 35px rgba(50, 55, 120, 0.28);
+    }
+
+    #particle-target::before,
+    #particle-target::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    #particle-target::before {
+      width: 170px;
+      height: 170px;
+      top: -65px;
+      right: 15%;
+      background: #ffdc61;
+      filter: blur(8px);
+    }
+
+    #particle-target::after {
+      width: 135px;
+      height: 135px;
+      bottom: -52px;
+      left: 24%;
+      background: #31efef;
+      filter: blur(5px);
+    }
+
+    #particle-label {
+      position: absolute;
+      z-index: 1;
+      left: 24px;
+      bottom: 20px;
+      padding: 9px 13px;
+      border-radius: 10px;
+      background: rgba(10, 17, 38, 0.78);
+      color: #fff;
+      font-weight: 800;
+      pointer-events: none;
+    }
+
+    #shadow-group,
+    #frame-group { min-height: 300px; }
+
+    #open-shadow-host {
+      display: block;
+      min-height: 220px;
+    }
+
+    .frame-stack {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 220px;
+      border: 2px solid #cad6e8;
+      border-radius: 15px;
+      background: #fff;
+    }
+
+    #dynamic-group,
+    #regression-group { grid-column: 1 / -1; }
+
+    #dynamic-zone {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      min-height: 70px;
+      padding: 14px;
+      border: 2px dashed #ccd7e7;
+      border-radius: 16px;
+      background: rgba(238, 243, 251, 0.7);
+    }
+
+    #dynamic-zone:empty::before {
+      content: "动态节点区域";
+      align-self: center;
+      color: #788ca8;
+      font-size: 13px;
+    }
+
+    .regression-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .regression-case {
+      min-height: 150px;
+      padding: 16px;
+      border: 1px solid #cbd7e8;
+      border-radius: 16px;
+      background: rgba(247, 250, 255, 0.92);
+    }
+
+    .regression-case > h3 {
+      margin: 0 0 12px;
+      color: #5b6f8e;
+      font-size: 12px;
+    }
+
+    #inline-important-target {
+      min-height: 86px;
+      padding: 24px;
+      border: 2px solid #d37e42;
+      border-radius: 13px;
+      background: #fff0d8;
+      color: #6e330d;
+      font-weight: 750;
+    }
+
+    #mixed-tag-zone {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .same-class-cross-tag.shared-peer {
+      min-height: 86px;
+      display: grid;
+      place-items: center;
+      margin: 0;
+      padding: 12px;
+      border: 2px solid #319487;
+      border-radius: 13px;
+      background: #ddfaf4;
+      color: #155a51;
+      font-weight: 750;
+    }
+
+    #fallback-zone {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    #fallback-zone > fixture-card {
+      min-height: 112px;
+      display: block;
+      padding: 18px 12px;
+      border: 2px solid #9971c8;
+      border-radius: 13px;
+      background: #f2e9ff;
+      color: #4c2774;
+      overflow-wrap: anywhere;
+    }
+
+    #fallback-zone > fixture-card > * {
+      display: block;
+      margin-top: 7px;
+      font-size: 12px;
+    }
+
+    #capture-event-target {
+      width: 100%;
+      min-height: 112px;
+      border: 2px solid #2b648d;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(77, 182, 255, 0.35), rgba(255, 255, 255, 0.92)),
+        #dff3ff;
+      color: #173e5c;
+      font: 750 14px/1.3 system-ui, sans-serif;
+    }
+
+    #fixture-dialog,
+    #fixture-popover {
+      box-sizing: border-box;
+      color: #182744;
+      font: 14px/1.4 system-ui, sans-serif;
+    }
+
+    #fixture-dialog {
+      width: 440px;
+      height: 260px;
+      inset: 24px auto auto 24px;
+      margin: 0;
+      padding: 22px;
+      border: 3px solid #4f6ee8;
+      border-radius: 18px;
+      background: #f4f7ff;
+    }
+
+    #fixture-dialog::backdrop {
+      background: rgba(12, 23, 45, 0.16);
+    }
+
+    #dialog-inner-target,
+    #popover-inner-target {
+      width: 178px;
+      min-height: 74px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      font-weight: 750;
+    }
+
+    #dialog-inner-target {
+      background: #dce5ff;
+      color: #2949aa;
+    }
+
+    #fixture-popover:popover-open {
+      width: 340px;
+      height: 210px;
+      inset: auto 24px 24px auto;
+      margin: 0;
+      padding: 20px;
+      border: 3px solid #b54c9b;
+      border-radius: 17px;
+      background: #fff1fb;
+    }
+
+    #popover-inner-target {
+      background: #f3cdea;
+      color: #762761;
+    }
+
+    @media (max-width: 860px) {
+      main { grid-template-columns: 1fr; }
+      #bulk-group, #particle-group, #dynamic-group, #regression-group { grid-column: 1; }
+      .frame-stack { grid-template-columns: 1fr; }
+      .regression-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="fixture-header">
+    <h1>干扰项隐藏器 E2E 主测试页</h1>
+    <output id="route-indicator" aria-live="polite"></output>
+  </header>
+
+  <main>
+    <section id="bulk-group" class="test-group" aria-labelledby="bulk-heading">
+      <h2 id="bulk-heading">默认大块与同类隐藏</h2>
+      <div class="bulk-row">
+        <article id="bulk-card-one" class="bulk-card">
+          <span class="bulk-label">同类目标一</span>
+          <small class="bulk-note">点击内部文字时默认选择整张卡片</small>
+        </article>
+        <article id="bulk-card-two" class="bulk-card">
+          <span class="bulk-label">同类目标二</span>
+          <small class="bulk-note">class 与第一张卡片完全相同</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="test-group" aria-labelledby="fine-heading">
+      <h2 id="fine-heading">修饰键精细选择</h2>
+      <div id="fine-panel"><span class="fine-target">精细选择目标</span></div>
+    </section>
+
+    <section class="test-group" aria-labelledby="unique-heading">
+      <h2 id="unique-heading">页面范围唯一目标</h2>
+      <section id="unique-target">唯一节点</section>
+    </section>
+
+    <section class="test-group" aria-labelledby="event-heading">
+      <h2 id="event-heading">页面事件隔离</h2>
+      <button id="event-target" type="button">事件计数目标</button>
+      <output id="event-readout"></output>
+    </section>
+
+    <section class="test-group" aria-labelledby="route-heading">
+      <h2 id="route-heading">SPA 路径切换</h2>
+      <p>使用 window.__fixture.pushPath() 或 replacePath()。</p>
+    </section>
+
+    <section id="particle-group" class="test-group" aria-labelledby="particle-heading">
+      <h2 id="particle-heading">粒子像素与时序</h2>
+      <div id="particle-target"><span id="particle-label">鲜明彩色粒子目标</span></div>
+    </section>
+
+    <section id="shadow-group" class="test-group" aria-labelledby="shadow-heading">
+      <h2 id="shadow-heading">Open Shadow DOM</h2>
+      <div id="open-shadow-host"></div>
+    </section>
+
+    <section id="frame-group" class="test-group" aria-labelledby="frame-heading">
+      <h2 id="frame-heading">Iframe</h2>
+      <div class="frame-stack">
+        <iframe id="same-origin-frame" title="同源 iframe" src="./frame.html?parent=index"></iframe>
+        <iframe id="cross-origin-frame" title="跨源 iframe"></iframe>
+      </div>
+    </section>
+
+    <section id="dynamic-group" class="test-group" aria-labelledby="dynamic-heading">
+      <h2 id="dynamic-heading">动态 DOM</h2>
+      <div id="dynamic-zone"></div>
+    </section>
+
+    <section id="regression-group" class="test-group" aria-labelledby="regression-heading">
+      <h2 id="regression-heading">边界回归</h2>
+      <div class="regression-grid">
+        <section class="regression-case">
+          <h3>Inline important display</h3>
+          <div id="inline-important-target" class="inline-important-target" style="display: block !important;">inline display:block!important</div>
+        </section>
+
+        <section class="regression-case">
+          <h3>同 class 不同 tag</h3>
+          <div id="mixed-tag-zone">
+            <article class="same-class-cross-tag shared-peer">article</article>
+            <aside class="same-class-cross-tag shared-peer">aside</aside>
+          </div>
+        </section>
+
+        <section class="regression-case">
+          <h3>Fallback 精确目标</h3>
+          <div id="fallback-zone">
+            <fixture-card src="/fixture-decoy-before.svg">decoy-before<span>before</span></fixture-card>
+            <fixture-card src="/fixture-fallback-base.svg">fallback-base<span>base-a</span><em>base-b</em></fixture-card>
+            <fixture-card src="/fixture-decoy-after.svg">decoy-after<span>after</span></fixture-card>
+          </div>
+        </section>
+
+        <section class="regression-case">
+          <h3>截图捕获事件</h3>
+          <button id="capture-event-target" type="button">capture-event-target</button>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="fixture-dialog">
+    <div id="dialog-inner-target">dialog-inner-target</div>
+    <div id="fixture-popover" popover="manual">
+      <div id="popover-inner-target">popover-inner-target</div>
+    </div>
+  </dialog>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const eventTypes = ["pointerdown", "pointerup", "click", "contextmenu"];
+      const eventCounts = Object.fromEntries(eventTypes.map((type) => [type, 0]));
+      const eventLog = [];
+      const captureEventCounts = Object.fromEntries(eventTypes.map((type) => [type, 0]));
+      const captureEventLog = [];
+      const routeChanges = [];
+      let dynamicSequence = 0;
+
+      const routeIndicator = document.getElementById("route-indicator");
+      const eventReadout = document.getElementById("event-readout");
+      const dynamicZone = document.getElementById("dynamic-zone");
+      const captureEventTarget = document.getElementById("capture-event-target");
+      const inlineImportantTarget = document.getElementById("inline-important-target");
+      const mixedTagZone = document.getElementById("mixed-tag-zone");
+      const fallbackZone = document.getElementById("fallback-zone");
+      const fallbackTarget = fallbackZone.querySelector("fixture-card:nth-of-type(2)");
+      const fixtureDialog = document.getElementById("fixture-dialog");
+      const fixturePopover = document.getElementById("fixture-popover");
+      const shadowHost = document.getElementById("open-shadow-host");
+      const shadowRoot = shadowHost.attachShadow({ mode: "open" });
+      const initialInlineImportantDisplay = Object.freeze({
+        value: inlineImportantTarget.style.getPropertyValue("display"),
+        priority: inlineImportantTarget.style.getPropertyPriority("display")
+      });
+
+      shadowRoot.innerHTML = `
+        <style>
+          * { box-sizing: border-box; }
+          .shadow-card {
+            min-height: 190px;
+            padding: 28px;
+            border: 3px solid #7869d6;
+            border-radius: 18px;
+            background: linear-gradient(145deg, #eeeaff, #d9f4ff);
+            color: #302269;
+            font: 700 15px/1.35 system-ui, sans-serif;
+          }
+          .shadow-fine {
+            display: inline-block;
+            padding: 11px 15px;
+            border-radius: 9px;
+            background: #6b55d9;
+            color: white;
+          }
+          #nested-shadow-host {
+            display: block;
+            margin-top: 20px;
+          }
+        </style>
+        <section class="shadow-card">
+          <span class="shadow-fine">Shadow 精细目标</span>
+          <div id="nested-shadow-host"></div>
+        </section>
+      `;
+
+      const nestedHost = shadowRoot.getElementById("nested-shadow-host");
+      const nestedRoot = nestedHost.attachShadow({ mode: "open" });
+      nestedRoot.innerHTML = `
+        <style>
+          .nested-shadow-card {
+            min-height: 72px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #ffcf5c, #ff7b95);
+            color: #4d1830;
+            font: 800 13px/1 system-ui, sans-serif;
+          }
+          .nested-shadow-fine { padding: 9px 12px; background: rgba(255,255,255,.68); border-radius: 8px; }
+        </style>
+        <div class="nested-shadow-card"><span class="nested-shadow-fine">嵌套 Shadow 目标</span></div>
+      `;
+
+      function renderRoute() {
+        routeIndicator.value = `${location.pathname}${location.search}${location.hash}`;
+        routeIndicator.textContent = routeIndicator.value;
+      }
+
+      function renderEvents() {
+        eventReadout.value = eventTypes.map((type) => `${type}:${eventCounts[type]}`).join("  ");
+        eventReadout.textContent = eventReadout.value;
+      }
+
+      function targetName(target) {
+        if (!(target instanceof Element)) return String(target);
+        const id = target.id ? `#${target.id}` : "";
+        const className = typeof target.className === "string" && target.className.trim()
+          ? `.${target.className.trim().split(/\s+/).join(".")}`
+          : "";
+        return `${target.localName}${id}${className}`;
+      }
+
+      function recordEvent(event) {
+        eventCounts[event.type] += 1;
+        eventLog.push({
+          type: event.type,
+          button: event.button,
+          target: targetName(event.target),
+          defaultPrevented: event.defaultPrevented,
+          time: Math.round(performance.now())
+        });
+        if (eventLog.length > 80) eventLog.shift();
+        renderEvents();
+      }
+
+      for (const type of eventTypes) window.addEventListener(type, recordEvent, false);
+
+      function getEvents() {
+        return {
+          counts: { ...eventCounts },
+          log: eventLog.map((entry) => ({ ...entry })),
+          captureTarget: getCaptureEvents()
+        };
+      }
+
+      function resetEvents() {
+        for (const type of eventTypes) eventCounts[type] = 0;
+        eventLog.length = 0;
+        resetCaptureEvents();
+        renderEvents();
+        return getEvents();
+      }
+
+      function recordCaptureEvent(event) {
+        captureEventCounts[event.type] += 1;
+        captureEventLog.push({
+          type: event.type,
+          button: event.button,
+          isTrusted: event.isTrusted,
+          defaultPrevented: event.defaultPrevented,
+          time: Math.round(performance.now())
+        });
+        if (captureEventLog.length > 80) captureEventLog.shift();
+      }
+
+      function getCaptureEvents() {
+        return {
+          counts: { ...captureEventCounts },
+          log: captureEventLog.map((entry) => ({ ...entry }))
+        };
+      }
+
+      function resetCaptureEvents() {
+        for (const type of eventTypes) captureEventCounts[type] = 0;
+        captureEventLog.length = 0;
+        return getCaptureEvents();
+      }
+
+      for (const type of eventTypes) captureEventTarget.addEventListener(type, recordCaptureEvent);
+
+      function inlineImportantStyleState() {
+        return {
+          value: inlineImportantTarget.style.getPropertyValue("display"),
+          priority: inlineImportantTarget.style.getPropertyPriority("display"),
+          computed: getComputedStyle(inlineImportantTarget).display,
+          original: { ...initialInlineImportantDisplay }
+        };
+      }
+
+      function setInlineImportantDisplay(value = "block", priority = "important") {
+        const before = inlineImportantStyleState();
+        if (value === null || value === "") {
+          inlineImportantTarget.style.removeProperty("display");
+        } else {
+          inlineImportantTarget.style.setProperty(
+            "display",
+            String(value),
+            String(priority).toLowerCase() === "important" ? "important" : ""
+          );
+        }
+        return { before, after: inlineImportantStyleState() };
+      }
+
+      function restoreInlineImportantStyle() {
+        return setInlineImportantDisplay(
+          initialInlineImportantDisplay.value,
+          initialInlineImportantDisplay.priority
+        );
+      }
+
+      function getMixedTagState() {
+        return [...mixedTagZone.children].map((node) => ({
+          tag: node.localName,
+          className: node.className,
+          display: getComputedStyle(node).display
+        }));
+      }
+
+      const fallbackStorageKey = `annoy-killer-fixture:fallback:${location.pathname}${location.search}`;
+      const fallbackQueryVariant = new URLSearchParams(location.search).get("fallbackVariant") || "base";
+      const fallbackTemplates = Object.freeze({
+        base: Object.freeze({
+          variant: "base",
+          text: "fallback-base ",
+          src: "/fixture-fallback-base.svg",
+          children: Object.freeze([
+            Object.freeze({ tag: "span", text: "base-a" }),
+            Object.freeze({ tag: "em", text: "base-b" })
+          ])
+        }),
+        mutated: Object.freeze({
+          variant: "mutated",
+          text: "fallback-mutated ",
+          src: "/fixture-fallback-mutated.svg",
+          children: Object.freeze([
+            Object.freeze({ tag: "strong", text: "mutated-a" }),
+            Object.freeze({ tag: "mark", text: "mutated-b" }),
+            Object.freeze({ tag: "small", text: "mutated-c" })
+          ])
+        })
+      });
+      const allowedFallbackChildTags = new Set(["span", "strong", "em", "i", "b", "small", "mark"]);
+      let fallbackState;
+
+      function fallbackTemplate(variant = "base") {
+        const name = String(variant || "base");
+        if (name === "base") return fallbackTemplates.base;
+        if (name === "mutated" || name === "changed" || name === "alternate") {
+          return { ...fallbackTemplates.mutated, variant: name };
+        }
+        return {
+          ...fallbackTemplates.mutated,
+          variant: name,
+          text: `fallback-${name} `,
+          src: `/fixture-fallback-${encodeURIComponent(name)}.svg`
+        };
+      }
+
+      function normalizeFallbackChildren(children, fallback = []) {
+        if (!Array.isArray(children)) return fallback.map((entry) => ({ ...entry }));
+        return children.slice(0, 12).map((entry) => {
+          if (typeof entry === "string") return { tag: "span", text: entry };
+          const requestedTag = String(entry?.tag || "span").toLowerCase();
+          return {
+            tag: allowedFallbackChildTags.has(requestedTag) ? requestedTag : "span",
+            text: String(entry?.text ?? "")
+          };
+        });
+      }
+
+      function normalizeFallbackState(value, fallback = fallbackTemplates.base) {
+        return {
+          variant: String(value?.variant ?? fallback.variant),
+          text: String(value?.text ?? fallback.text),
+          src: value?.src === null ? null : String(value?.src ?? fallback.src),
+          children: normalizeFallbackChildren(value?.children, fallback.children)
+        };
+      }
+
+      function persistFallbackState() {
+        try {
+          sessionStorage.setItem(fallbackStorageKey, JSON.stringify(fallbackState));
+          return true;
+        } catch {
+          return false;
+        }
+      }
+
+      function renderFallbackState(state, persist = true) {
+        fallbackState = normalizeFallbackState(state);
+        if (fallbackState.src === null || fallbackState.src === "") {
+          fallbackTarget.removeAttribute("src");
+        } else {
+          fallbackTarget.setAttribute("src", fallbackState.src);
+        }
+        const children = [document.createTextNode(fallbackState.text)];
+        for (const childState of fallbackState.children) {
+          const child = document.createElement(childState.tag);
+          child.textContent = childState.text;
+          children.push(child);
+        }
+        fallbackTarget.replaceChildren(...children);
+        if (persist) persistFallbackState();
+        return getFallbackState();
+      }
+
+      function getFallbackState() {
+        return {
+          variant: fallbackState.variant,
+          selector: "#fallback-zone > fixture-card:nth-of-type(2)",
+          index: [...fallbackZone.querySelectorAll(":scope > fixture-card")].indexOf(fallbackTarget),
+          text: fallbackTarget.textContent.replace(/\s+/g, " ").trim(),
+          directText: [...fallbackTarget.childNodes]
+            .filter((node) => node.nodeType === Node.TEXT_NODE)
+            .map((node) => node.textContent)
+            .join("")
+            .replace(/\s+/g, " ")
+            .trim(),
+          src: fallbackTarget.getAttribute("src"),
+          childSignature: [...fallbackTarget.children].map((node) => node.localName).join(","),
+          childTexts: [...fallbackTarget.children].map((node) => node.textContent),
+          display: getComputedStyle(fallbackTarget).display,
+          hasStableId: Boolean(fallbackTarget.id),
+          dataAttributes: [...fallbackTarget.attributes]
+            .filter((attribute) => attribute.name.startsWith("data-"))
+            .map((attribute) => attribute.name)
+        };
+      }
+
+      function setFallbackVariant(variant = "mutated", options = {}) {
+        const before = getFallbackState();
+        const after = renderFallbackState(fallbackTemplate(variant), options.persist !== false);
+        return { before, after, storageKey: fallbackStorageKey };
+      }
+
+      function mutateFallback(options = {}) {
+        const before = getFallbackState();
+        const next = {
+          ...fallbackState,
+          variant: String(options.variant ?? "custom"),
+          ...(Object.hasOwn(options, "text") ? { text: options.text } : {}),
+          ...(Object.hasOwn(options, "src") ? { src: options.src } : {}),
+          ...(Object.hasOwn(options, "children") ? { children: options.children } : {})
+        };
+        const after = renderFallbackState(next, options.persist !== false);
+        return { before, after, storageKey: fallbackStorageKey };
+      }
+
+      function clearFallbackMutation() {
+        const before = getFallbackState();
+        try {
+          sessionStorage.removeItem(fallbackStorageKey);
+        } catch {
+          // The fixture remains usable when storage is unavailable.
+        }
+        const after = renderFallbackState(fallbackTemplate(fallbackQueryVariant), false);
+        return { before, after, storageKey: fallbackStorageKey };
+      }
+
+      function initialFallbackState() {
+        try {
+          const stored = sessionStorage.getItem(fallbackStorageKey);
+          if (stored) return normalizeFallbackState(JSON.parse(stored), fallbackTemplate(fallbackQueryVariant));
+        } catch {
+          // Fall back to the URL-controlled fixture variant.
+        }
+        return normalizeFallbackState(fallbackTemplate(fallbackQueryVariant));
+      }
+
+      renderFallbackState(initialFallbackState(), false);
+
+      function isPopoverOpen() {
+        try {
+          return fixturePopover.matches(":popover-open");
+        } catch {
+          return false;
+        }
+      }
+
+      function elementGeometry(element) {
+        const rect = element.getBoundingClientRect();
+        const blankPoint = {
+          x: Math.round(rect.right - Math.min(28, rect.width * 0.12)),
+          y: Math.round(rect.bottom - Math.min(28, rect.height * 0.12))
+        };
+        const hit = rect.width && rect.height
+          ? document.elementFromPoint(blankPoint.x, blankPoint.y)
+          : null;
+        return {
+          rect: {
+            left: rect.left,
+            top: rect.top,
+            right: rect.right,
+            bottom: rect.bottom,
+            width: rect.width,
+            height: rect.height
+          },
+          blankPoint,
+          blankPointHit: hit ? { id: hit.id, tag: hit.localName } : null,
+          blankPointHitsHost: hit === element
+        };
+      }
+
+      function getTopLayerState() {
+        let dialogModal = false;
+        try {
+          dialogModal = fixtureDialog.matches(":modal");
+        } catch {
+          dialogModal = fixtureDialog.open;
+        }
+        const popoverSupported = typeof fixturePopover.showPopover === "function";
+        return {
+          dialogOpen: fixtureDialog.open,
+          dialogModal,
+          popoverSupported,
+          popoverOpen: popoverSupported && isPopoverOpen(),
+          dialog: elementGeometry(fixtureDialog),
+          popover: elementGeometry(fixturePopover)
+        };
+      }
+
+      function openTopLayers(options = {}) {
+        const openDialog = options.dialog !== false;
+        const openPopover = options.popover !== false;
+        if (openDialog && !fixtureDialog.open) fixtureDialog.showModal();
+        if (openPopover && typeof fixturePopover.showPopover === "function" && !isPopoverOpen()) {
+          fixturePopover.showPopover();
+        }
+        return getTopLayerState();
+      }
+
+      function closeTopLayers() {
+        if (typeof fixturePopover.hidePopover === "function" && isPopoverOpen()) {
+          fixturePopover.hidePopover();
+        }
+        if (fixtureDialog.open) fixtureDialog.close();
+        return getTopLayerState();
+      }
+
+      function makeBulkCard(label) {
+        const card = document.createElement("article");
+        card.className = "bulk-card";
+        card.dataset.dynamicInstance = String(dynamicSequence);
+        const cardLabel = document.createElement("span");
+        cardLabel.className = "bulk-label";
+        cardLabel.textContent = label;
+        const note = document.createElement("small");
+        note.className = "bulk-note";
+        note.textContent = "动态创建的同类节点";
+        card.append(cardLabel, note);
+        return card;
+      }
+
+      function makeUniqueTarget(label) {
+        document.getElementById("unique-target")?.remove();
+        const target = document.createElement("section");
+        target.id = "unique-target";
+        target.dataset.dynamicInstance = String(dynamicSequence);
+        target.textContent = label;
+        return target;
+      }
+
+      function addDynamic(kind = "bulk", options = {}) {
+        dynamicSequence += 1;
+        const label = typeof options.label === "string"
+          ? options.label
+          : `动态 ${kind} ${dynamicSequence}`;
+        let node;
+        let selector;
+
+        if (kind === "bulk") {
+          node = makeBulkCard(label);
+          selector = `.bulk-card[data-dynamic-instance="${dynamicSequence}"]`;
+          dynamicZone.append(node);
+        } else if (kind === "unique") {
+          node = makeUniqueTarget(label);
+          selector = "#unique-target";
+          dynamicZone.append(node);
+        } else if (kind === "shadow") {
+          node = document.createElement("section");
+          node.className = "shadow-card";
+          node.dataset.dynamicInstance = String(dynamicSequence);
+          node.innerHTML = `<span class="shadow-fine"></span>`;
+          node.firstElementChild.textContent = label;
+          selector = `.shadow-card[data-dynamic-instance="${dynamicSequence}"]`;
+          shadowRoot.append(node);
+        } else if (kind === "custom") {
+          node = document.createElement(options.tag || "div");
+          if (options.id) node.id = String(options.id);
+          if (options.className) node.className = String(options.className);
+          node.dataset.dynamicInstance = String(dynamicSequence);
+          node.textContent = label;
+          selector = `[data-dynamic-instance="${dynamicSequence}"]`;
+          dynamicZone.append(node);
+        } else {
+          throw new TypeError(`不支持的动态节点类型: ${kind}`);
+        }
+
+        return {
+          kind,
+          selector,
+          sequence: dynamicSequence,
+          connected: node.isConnected,
+          display: getComputedStyle(node).display
+        };
+      }
+
+      function clearDynamic() {
+        dynamicZone.replaceChildren();
+        for (const node of shadowRoot.querySelectorAll("[data-dynamic-instance]")) node.remove();
+        return true;
+      }
+
+      function navigate(method, path) {
+        const fallback = method === "push" ? "/fixture-spa-push" : "/fixture-spa-replace";
+        const nextUrl = new URL(path || fallback, location.href);
+        if (nextUrl.origin !== location.origin) throw new DOMException("只支持同源 SPA 路径", "SecurityError");
+        history[method === "push" ? "pushState" : "replaceState"](
+          { fixture: true, method, sequence: routeChanges.length + 1 },
+          "",
+          `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`
+        );
+        const change = {
+          method,
+          pathname: location.pathname,
+          search: location.search,
+          hash: location.hash
+        };
+        routeChanges.push(change);
+        renderRoute();
+        window.dispatchEvent(new CustomEvent("fixture:navigation", { detail: change }));
+        return { ...change };
+      }
+
+      function getState() {
+        const display = (selector, root = document) => {
+          const node = root.querySelector(selector);
+          return node ? getComputedStyle(node).display : null;
+        };
+        return {
+          href: location.href,
+          pathname: location.pathname,
+          bulkDisplays: [...document.querySelectorAll(".bulk-card")].map((node) => getComputedStyle(node).display),
+          finePanelDisplay: display("#fine-panel"),
+          fineTargetDisplay: display("#fine-panel > .fine-target"),
+          uniqueDisplay: display("#unique-target"),
+          particleDisplay: display("#particle-target"),
+          shadowCardDisplay: display(".shadow-card", shadowRoot),
+          shadowFineDisplay: display(".shadow-fine", shadowRoot),
+          nestedShadowDisplay: display(".nested-shadow-card", nestedRoot),
+          inlineImportant: inlineImportantStyleState(),
+          mixedTag: getMixedTagState(),
+          fallback: getFallbackState(),
+          captureEvents: getCaptureEvents(),
+          topLayer: getTopLayerState(),
+          events: getEvents(),
+          routeChanges: routeChanges.map((entry) => ({ ...entry }))
+        };
+      }
+
+      function resolveCrossOrigin() {
+        const configured = new URLSearchParams(location.search).get("crossOrigin");
+        if (configured) return new URL(configured, location.href).origin;
+        const url = new URL(location.href);
+        const currentPort = Number(url.port || (url.protocol === "https:" ? 443 : 80));
+        url.port = String(currentPort + 1);
+        return url.origin;
+      }
+
+      const crossFrame = document.getElementById("cross-origin-frame");
+      const crossOrigin = resolveCrossOrigin();
+      crossFrame.src = `${crossOrigin}/cross.html?parent=${encodeURIComponent(location.origin)}`;
+      crossFrame.dataset.expectedOrigin = crossOrigin;
+
+      window.addEventListener("popstate", renderRoute);
+      renderRoute();
+      renderEvents();
+
+      window.__fixture = Object.freeze({
+        version: 1,
+        selectors: Object.freeze({
+          bulkCards: ".bulk-card",
+          bulkLabels: ".bulk-label",
+          finePanel: "#fine-panel",
+          fineTarget: "#fine-panel > .fine-target",
+          uniqueTarget: "#unique-target",
+          eventTarget: "#event-target",
+          particleTarget: "#particle-target",
+          sameOriginFrame: "#same-origin-frame",
+          crossOriginFrame: "#cross-origin-frame",
+          openShadowHost: "#open-shadow-host",
+          shadowCard: ".shadow-card",
+          shadowFine: ".shadow-fine",
+          nestedShadowHost: "#nested-shadow-host",
+          nestedShadowCard: ".nested-shadow-card",
+          nestedShadowFine: ".nested-shadow-fine",
+          inlineImportantTarget: "#inline-important-target",
+          mixedTagZone: "#mixed-tag-zone",
+          sameClassArticle: "#mixed-tag-zone > article.same-class-cross-tag.shared-peer",
+          sameClassAside: "#mixed-tag-zone > aside.same-class-cross-tag.shared-peer",
+          fallbackZone: "#fallback-zone",
+          fallbackTarget: "#fallback-zone > fixture-card:nth-of-type(2)",
+          captureEventTarget: "#capture-event-target",
+          fixtureDialog: "#fixture-dialog",
+          dialogInnerTarget: "#dialog-inner-target",
+          fixturePopover: "#fixture-popover",
+          popoverInnerTarget: "#popover-inner-target"
+        }),
+        resetEvents,
+        getEvents,
+        resetCaptureEvents,
+        getCaptureEvents,
+        addDynamic,
+        clearDynamic,
+        getInlineImportantStyle: inlineImportantStyleState,
+        setInlineImportantDisplay,
+        restoreInlineImportantStyle,
+        getMixedTagState,
+        getFallbackState,
+        setFallbackVariant,
+        mutateFallback,
+        clearFallbackMutation,
+        openTopLayers,
+        closeTopLayers,
+        getTopLayerState,
+        pushPath: (path) => navigate("push", path),
+        replacePath: (path) => navigate("replace", path),
+        getState,
+        getFrameUrls: () => ({
+          sameOrigin: document.getElementById("same-origin-frame").src,
+          crossOrigin: crossFrame.src
+        })
+      });
+    })();
+  </script>
+</body>
+</html>

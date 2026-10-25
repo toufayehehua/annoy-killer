@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Overlay selection fixture</title>
+<style>
+  body { margin: 0; font: 16px sans-serif; background: #f4f4f4; }
+  #page-content { min-height: 2400px; padding: 100px 30px; }
+  #page-button { padding: 24px; }
+  .full-cover { position: fixed; inset: 0; z-index: 102; background: rgba(1,5,13,.6); display: flex; align-items: center; justify-content: center; }
+  .popup-panel { position: relative; width: 440px; height: 360px; background: #f44; color: white; padding: 30px; box-sizing: border-box; }
+  .popup-panel button { margin-top: 80px; padding: 20px; }
+  .portal-root { position: fixed; inset: 0; z-index: 103; }
+  .portal-root .mask { position: absolute; inset: 0; background: rgba(0,0,0,.6); }
+  .portal-root .popup-panel { position: absolute; left: calc(50% - 220px); top: calc(50% - 180px); }
+  .sibling-mask { position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.6); }
+  .sibling-dialog { position: fixed; left: calc(50% - 220px); top: calc(50% - 180px); z-index: 201; }
+  #app-shell { position: fixed; inset: 0; z-index: 10; background: white; overflow: auto; }
+</style></head><body>
+<main id="page-content"><button id="page-button">Underlying content</button><p>Content must not be hidden with the popup.</p></main>
+<script>
+  window.__fixture = { version: 'overlay-1' };
+  const mode = new URL(location.href).searchParams.get('mode') || 'nested';
+  const panel = '<div id="popup-panel" class="popup-panel"><h2>Promotion</h2><button id="popup-button">Popup action</button></div>';
+  if (mode === 'nested') document.body.insertAdjacentHTML('beforeend', '<div id="overlay-root" class="full-cover">' + panel + '</div>');
+  if (mode === 'portal') document.body.insertAdjacentHTML('beforeend', '<div id="overlay-root" class="portal-root"><div id="popup-mask" class="mask"></div>' + panel + '</div>');
+  if (mode === 'siblings') {
+    document.body.insertAdjacentHTML('beforeend', '<div id="popup-mask" class="sibling-mask"></div>' + panel);
+    document.querySelector('#popup-panel').classList.add('sibling-dialog');
+    document.querySelector('#popup-panel').setAttribute('role', 'dialog');
+    document.querySelector('#popup-panel').setAttribute('aria-modal', 'true');
+  }
+  if (mode === 'shell') {
+    const shell = document.createElement('div'); shell.id = 'app-shell';
+    shell.append(document.querySelector('#page-content')); document.body.append(shell);
+  } else {
+    document.body.style.setProperty('overflow', 'hidden', 'important');
+    document.body.style.setProperty('overflow-x', 'clip', 'important');
+  }
+  document.querySelector('#page-button').onclick = () => document.body.dataset.pageClicks = String(Number(document.body.dataset.pageClicks || 0) + 1);
+  document.querySelector('#popup-button')?.addEventListener('click', () => document.body.dataset.popupClicks = '1');
+</script></body></html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>同源 iframe 测试页</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 18px; font: 13px/1.35 system-ui, sans-serif; color: #173d38; background: #eafff9; }
+    .frame-card { min-height: 105px; padding: 20px; border: 2px solid #36a78f; border-radius: 13px; background: #fff; }
+    .frame-fine { display: inline-block; padding: 9px 11px; border-radius: 8px; background: #b9f4e4; font-weight: 750; }
+    #frame-unique-target { min-height: 58px; display: grid; place-items: center; margin-top: 12px; border-radius: 11px; background: #ffe7a5; font-weight: 750; }
+  </style>
+</head>
+<body>
+  <section class="frame-card"><span class="frame-fine">Iframe 精细目标</span></section>
+  <section id="frame-unique-target">Iframe 唯一目标</section>
+  <script>
+    (() => {
+      "use strict";
+      const counts = { pointerdown: 0, pointerup: 0, click: 0, contextmenu: 0 };
+      let sequence = 0;
+      for (const type of Object.keys(counts)) window.addEventListener(type, () => { counts[type] += 1; });
+      window.__fixture = Object.freeze({
+        version: 1,
+        resetEvents() { for (const type of Object.keys(counts)) counts[type] = 0; return { ...counts }; },
+        getEvents() { return { counts: { ...counts } }; },
+        addDynamic() {
+          sequence += 1;
+          const node = document.createElement("section");
+          node.className = "frame-card";
+          node.dataset.dynamicInstance = String(sequence);
+          node.innerHTML = `<span class="frame-fine">动态 Iframe 目标</span>`;
+          document.body.append(node);
+          return { selector: `.frame-card[data-dynamic-instance="${sequence}"]` };
+        },
+        getState() {
+          return {
+            href: location.href,
+            frameCardDisplays: [...document.querySelectorAll(".frame-card")].map((node) => getComputedStyle(node).display),
+            uniqueDisplay: getComputedStyle(document.getElementById("frame-unique-target")).display,
+            events: { ...counts }
+          };
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

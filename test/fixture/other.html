@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>同源跨路径测试页</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 82px 32px;
+      font: 16px/1.45 system-ui, sans-serif;
+      color: #16324a;
+      background: linear-gradient(145deg, #edf8ff, #e7f7ed);
+    }
+    main { max-width: 900px; margin: auto; display: grid; gap: 22px; }
+    .bulk-card { min-height: 132px; padding: 28px; border: 2px solid #58a3c2; border-radius: 18px; background: #fff; }
+    .bulk-label { display: inline-block; padding: 10px 14px; border-radius: 9px; background: #116d95; color: #fff; font-weight: 750; }
+    #unique-target { min-height: 110px; display: grid; place-items: center; border-radius: 18px; background: #fff0c2; font-weight: 750; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>同源跨路径测试页</h1>
+    <article id="other-bulk-card" class="bulk-card"><span class="bulk-label">同源同类目标</span></article>
+    <section id="unique-target">跨路径同 ID 目标</section>
+  </main>
+  <script>
+    (() => {
+      "use strict";
+      let sequence = 0;
+      window.__fixture = Object.freeze({
+        version: 1,
+        addDynamic(kind = "bulk") {
+          sequence += 1;
+          if (kind === "bulk") {
+            const node = document.createElement("article");
+            node.className = "bulk-card";
+            node.dataset.dynamicInstance = String(sequence);
+            node.innerHTML = `<span class="bulk-label">动态同源同类目标</span>`;
+            document.querySelector("main").append(node);
+            return { kind, selector: `.bulk-card[data-dynamic-instance="${sequence}"]` };
+          }
+          if (kind === "unique") {
+            document.getElementById("unique-target")?.remove();
+            const node = document.createElement("section");
+            node.id = "unique-target";
+            node.textContent = "动态跨路径同 ID 目标";
+            document.querySelector("main").append(node);
+            return { kind, selector: "#unique-target" };
+          }
+          throw new TypeError(`不支持的动态节点类型: ${kind}`);
+        },
+        getState() {
+          return {
+            href: location.href,
+            bulkDisplays: [...document.querySelectorAll(".bulk-card")].map((node) => getComputedStyle(node).display),
+            uniqueDisplay: document.getElementById("unique-target")
+              ? getComputedStyle(document.getElementById("unique-target")).display
+              : null
+          };
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

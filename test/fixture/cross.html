@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>跨源隔离测试页</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 22px; font: 14px/1.4 system-ui, sans-serif; color: #3c1c48; background: #fff2fc; }
+    .bulk-card { min-height: 118px; padding: 22px; border: 3px solid #c462cf; border-radius: 15px; background: #fff; }
+    .bulk-label { display: inline-block; padding: 8px 11px; border-radius: 8px; background: #922ca0; color: white; font-weight: 750; }
+    #cross-unique-target { min-height: 72px; display: grid; place-items: center; margin-top: 14px; border-radius: 12px; background: #ffd9f6; font-weight: 750; }
+  </style>
+</head>
+<body>
+  <article id="cross-bulk-card" class="bulk-card"><span class="bulk-label">跨源同名 class 目标</span></article>
+  <section id="cross-unique-target">跨源唯一目标</section>
+  <script>
+    (() => {
+      "use strict";
+      const counts = { pointerdown: 0, pointerup: 0, click: 0, contextmenu: 0 };
+      for (const type of Object.keys(counts)) window.addEventListener(type, () => { counts[type] += 1; });
+      window.__fixture = Object.freeze({
+        version: 1,
+        resetEvents() { for (const type of Object.keys(counts)) counts[type] = 0; return { ...counts }; },
+        getEvents() { return { counts: { ...counts } }; },
+        getState() {
+          return {
+            origin: location.origin,
+            bulkDisplay: getComputedStyle(document.querySelector(".bulk-card")).display,
+            uniqueDisplay: getComputedStyle(document.getElementById("cross-unique-target")).display,
+            events: { ...counts }
+          };
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
