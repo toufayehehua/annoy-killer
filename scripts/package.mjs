@@ -19,10 +19,13 @@ const files = ['manifest.json', 'background.js', 'content.js', 'rules.js', 'sync
   ...['16', '32', '48', '128'].map(size => `icons/icon-${size}.png`),
   'images/wechat-pay.png', 'images/wise-pay.png', ...locales.map(locale => `_locales/${locale}/messages.json`)];
 for (const file of files) await readFile(`${sourceRoot}/${file}`);
+for (const file of ['LICENSE', 'NOTICE']) await readFile(resolve(root, file));
 await mkdir(`${sourceRoot}/dist`, {recursive:true});
 const output = `dist/annoy-killer-chrome-${manifest.version}.zip`;
-const zip = spawnSync('/usr/bin/zip', ['-q', '-X', output, ...files], {cwd:sourceRoot, stdio:'inherit'});
-if (zip.status !== 0) throw new Error('Packaging failed');
+for (const [cwd, entries] of [[sourceRoot, files], [root, ['LICENSE', 'NOTICE']]]) {
+  const zip = spawnSync('/usr/bin/zip', ['-q', '-X', resolve(sourceRoot, output), ...entries], {cwd, stdio:'inherit'});
+  if (zip.status !== 0) throw new Error('Packaging failed');
+}
 for (const entry of await readdir(`${sourceRoot}/dist`, {withFileTypes:true})) {
   if (entry.isFile() && /^annoy-killer-chrome-\d+(?:\.\d+){1,3}\.zip$/.test(entry.name) &&
       entry.name !== `annoy-killer-chrome-${manifest.version}.zip`) {

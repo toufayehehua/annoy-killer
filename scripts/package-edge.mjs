@@ -36,6 +36,7 @@ for (const locale of locales) {
   }
 }
 for (const file of files) await readFile(join(sourceRoot, file));
+for (const file of ["LICENSE", "NOTICE"]) await readFile(join(root, file));
 const fallback = await readFile(join(sourceRoot, "options.html"), "utf8");
 if (!fallback.includes("使用 Microsoft Edge 同步功能")) throw new Error("Missing Edge sync fallback text");
 
@@ -43,11 +44,10 @@ await mkdir(join(sourceRoot, "dist"), { recursive: true });
 const outputName = `annoy-killer-edge-${manifest.version}.zip`;
 const output = join(sourceRoot, "dist", outputName);
 await rm(output, { force: true });
-const zip = spawnSync("/usr/bin/zip", ["-q", "-X", output, ...files], {
-  cwd: sourceRoot,
-  stdio: "inherit"
-});
-if (zip.status !== 0) throw new Error("Edge packaging failed");
+for (const [cwd, entries] of [[sourceRoot, files], [root, ["LICENSE", "NOTICE"]]]) {
+  const zip = spawnSync("/usr/bin/zip", ["-q", "-X", output, ...entries], { cwd, stdio: "inherit" });
+  if (zip.status !== 0) throw new Error("Edge packaging failed");
+}
 
 for (const entry of await readdir(join(sourceRoot, "dist"), { withFileTypes: true })) {
   if (entry.isFile() && /^annoy-killer-edge-\d+(?:\.\d+){1,3}\.zip$/.test(entry.name) &&
