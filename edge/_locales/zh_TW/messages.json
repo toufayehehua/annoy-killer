@@ -1,0 +1,158 @@
+{
+  "extName": {
+    "message": "擾人殺手 – 網頁元素隱藏工具"
+  },
+  "description": {
+    "message": "點擊隱藏網頁中的干擾元素、橫幅和彈出視窗，自動儲存隱藏規則，讓網頁更清爽、閱讀更專注。"
+  },
+  "actionTitle": {
+    "message": "隱藏干擾項目"
+  },
+  "options": {
+    "message": "選項"
+  },
+  "shortcutHeading": {
+    "message": "快捷鍵設定"
+  },
+  "toggleExtension": {
+    "message": "開啟 / 關閉擴充功能"
+  },
+  "instructions": {
+    "message": "使用說明"
+  },
+  "coffeePrompt": {
+    "message": "請我喝杯咖啡吧"
+  },
+  "coffeeHeading": {
+    "message": "請我喝杯咖啡吧"
+  },
+  "wechatAlt": {
+    "message": "微信收款碼"
+  },
+  "wiseAlt": {
+    "message": "WISE 收款碼"
+  },
+  "wechatDonate": {
+    "message": "微信掃碼贊助"
+  },
+  "donate": {
+    "message": "點此贊助"
+  },
+  "coffeeMenu": {
+    "message": "請杯咖啡"
+  },
+  "feedback": {
+    "message": "提供意見"
+  },
+  "orSeparator": {
+    "message": " 或 "
+  },
+  "doubleTap": {
+    "message": "連按兩下 $1"
+  },
+  "refine": {
+    "message": "按住 $1 鍵可暫時切換為網頁滑鼠點擊狀態，按住 $2 鍵可縮小選取範圍，按住 $3 鍵可進一步縮小範圍。"
+  },
+  "exitGuide": {
+    "message": "按 $1 或 $2 鍵可以退出操作模式。"
+  },
+  "exitUndo": {
+    "message": "按 $1 或 $2 鍵可以退出操作模式，隱藏元素會自動儲存。"
+  },
+  "toggleGuide": {
+    "message": "連按兩下 $1 可開啟或關閉擴充功能。以滑鼠右鍵點擊擴充功能圖示 → 選項，可修改快捷鍵。"
+  },
+  "selectGuide": {
+    "message": "在一般網頁點擊擴充功能圖示，移動滑鼠選取頁面區域並點擊隱藏。"
+  },
+  "previewGuide": {
+    "message": "點擊「顯示」可預覽已隱藏項目，點擊已隱藏區塊的任意位置可還原該項目。"
+  },
+  "resetGuide": {
+    "message": "點擊「重設」可預覽頁面初始狀態，再點「還原」可回到重設前的隱藏狀態。"
+  },
+  "closeGuide": {
+    "message": "關閉引導"
+  },
+  "toggleHidden": {
+    "message": "切換已隱藏項目顯示"
+  },
+  "showHidden": {
+    "message": "顯示已隱藏的區塊"
+  },
+  "show": {
+    "message": "顯示"
+  },
+  "reset": {
+    "message": "重設"
+  },
+  "previewInitial": {
+    "message": "預覽頁面初始狀態"
+  },
+  "done": {
+    "message": "完成"
+  },
+  "saveChanges": {
+    "message": "儲存本次修改"
+  },
+  "hiddenCount": {
+    "message": "已隱藏 $1 個項目"
+  },
+  "restore": {
+    "message": "還原"
+  },
+  "restorePrevious": {
+    "message": "還原重設前的隱藏狀態"
+  },
+  "collapseHidden": {
+    "message": "收起已隱藏的區塊"
+  },
+  "hide": {
+    "message": "隱藏"
+  },
+  "restoreItem": {
+    "message": "還原此隱藏項目"
+  },
+  "restoreModule": {
+    "message": "還原此區塊"
+  },
+  "syncRules": {
+    "message": "同步封鎖規則"
+  },
+  "syncNoSites": {
+    "message": "暫無已同步網站"
+  },
+  "syncViewAll": {
+    "message": "查看全部"
+  },
+  "syncCollapse": {
+    "message": "收起"
+  },
+  "syncStorageUsage": {
+    "message": "$1 / $2"
+  },
+  "syncLocalFiles": {
+    "message": "本機檔案"
+  },
+  "syncStatusSynced": {
+    "message": "已同步"
+  },
+  "syncStatusPending": {
+    "message": "等待同步"
+  },
+  "syncStatusPaused": {
+    "message": "已暫停"
+  },
+  "syncStatusError": {
+    "message": "同步失敗"
+  },
+  "syncNow": {
+    "message": "立即同步"
+  },
+  "syncingNow": {
+    "message": "同步中…"
+  },
+  "syncNote": {
+    "message": "使用 Microsoft Edge 同步功能"
+  }
+}
