@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="options">选项</title>
+  <link rel="stylesheet" href="options.css">
+  <script src="shortcuts.js" defer></script>
+  <script src="options.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><img src="icons/icon-48.png" width="40" height="40" alt=""><h1 data-i18n="options">选项</h1></header>
+    <div class="settings-column">
+    <section aria-labelledby="shortcut-heading">
+    <h2 id="shortcut-heading" data-i18n="shortcutHeading">快捷键设置</h2>
+    <div class="setting">
+      <label for="shortcut-key" data-i18n="toggleExtension">打开 / 关闭插件</label>
+      <select id="shortcut-key" disabled></select>
+    </div>
+    </section>
+    <div class="setting sync-setting">
+      <label for="rule-sync" data-i18n="syncRules">同步屏蔽规则</label>
+      <span class="sync-note" data-i18n="syncNote">使用 Microsoft Edge 同步功能</span>
+      <span id="sync-storage" class="sync-storage-value" aria-live="polite"></span>
+      <input id="rule-sync" type="checkbox" role="switch" disabled>
+    </div>
+    <section class="sync-details">
+      <ul id="sync-sites" class="sync-sites" aria-live="polite"></ul>
+      <p id="sync-empty" class="sync-empty" data-i18n="syncNoSites" hidden>暂无已同步网站</p>
+      <button id="sync-sites-toggle" class="sync-sites-toggle" type="button" hidden></button>
+    </section>
+    <section class="instructions" aria-labelledby="instructions-heading">
+      <h2 id="instructions-heading" data-i18n="instructions">使用说明</h2>
+      <ol>
+        <li data-i18n="selectGuide"></li>
+        <li data-i18n="refine"></li>
+        <li data-i18n="exitUndo"></li>
+        <li data-i18n="toggleGuide"></li>
+        <li data-i18n="previewGuide"></li>
+        <li data-i18n="resetGuide"></li>
+      </ol>
+    </section>
+    </div>
+    <section id="coffee" class="coffee" aria-labelledby="coffee-heading">
+      <h2 id="coffee-heading" data-i18n="coffeeHeading">请我喝杯咖啡吧</h2>
+      <div class="coffee-codes">
+        <div class="coffee-code">
+          <img src="images/wechat-pay.png" width="1199" height="1631" alt="微信收款码" data-i18n-alt="wechatAlt">
+          <p class="coffee-caption" data-i18n="wechatDonate">微信扫码打赏</p>
+        </div>
+        <div class="coffee-code">
+          <img src="images/wise-pay.png" width="1199" height="1631" alt="WISE 收款码" data-i18n-alt="wiseAlt">
+          <a class="coffee-caption" href="https://wise.com/pay/me/yiz726" target="_blank" rel="noopener noreferrer" data-i18n="donate">点此进行打赏</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
