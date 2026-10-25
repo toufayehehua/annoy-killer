@@ -1,0 +1,13 @@
+O Annoy Killer ajuda você a ocultar elementos indesejados de sites e focar no conteúdo que quer ler. Selecione banners, pop-ups, barras laterais ou outras áreas que não deseja ver.
+
+Recursos
+• Em uma página comum, clique no ícone da extensão, aponte para uma área e clique para ocultá-la.
+• Clique em “Mostrar” para ver os itens ocultos. Clique em um item oculto para restaurá-lo.
+• Clique em “Redefinir” para ver a página original e depois em “Restaurar” para voltar ao estado oculto anterior.
+• Clique em “Concluído” ou pressione Enter para salvar. Os itens continuam ocultos após atualizar a página.
+
+As regras são salvas localmente e sincronizadas por padrão pelo Microsoft Edge Sync entre dispositivos com a mesma conta Microsoft e a sincronização do Edge ativada. Você pode desativar a sincronização de regras nas opções; os atalhos continuam locais. Sem conta adicional para a extensão nem rastreadores de análise ou publicidade. Capturas temporárias para a animação são processadas no seu dispositivo e não são enviadas a servidores.
+
+É uma ferramenta manual para ocultar elementos, não um bloqueador de anúncios de rede. Não bloqueia todos os anúncios nem contorna conteúdo pago. Mudanças nos sites podem exigir novas regras. Não funciona em páginas internas do Edge nem nos Complementos do Microsoft Edge.
+
+A interface acompanha o idioma do Edge, com inglês como alternativa. Oferece inglês, chinês simplificado e tradicional, japonês, coreano, alemão, francês, espanhol e português do Brasil.

@@ -1,0 +1,13 @@
+Annoy Killer helps you hide distracting website elements and focus on what you want to read. Select unwanted banners, popups, sidebars or other page sections yourself.
+
+Features
+• On a regular webpage, click the extension icon, point to a page area and click to hide it.
+• Click “Show” to preview hidden items. Click anywhere on a hidden item to restore it.
+• Click “Reset” to preview the original page, then “Restore” to return to the previous hidden state.
+• Click “Done” or press Enter to save. Hidden items stay hidden after a refresh.
+
+Hidden-element rules are saved locally and synced by default through Microsoft Edge Sync across devices using the same Microsoft account with Edge Sync enabled. You can turn rule sync off in options; shortcut preferences stay local. No separate extension account, analytics or advertising trackers. Temporary page captures are processed on your device for the disappearance animation and are not uploaded.
+
+This is a manual element hider, not a network ad blocker. It does not block every ad or bypass paywalls. Rules can need updating when a website changes. Edge internal pages and Microsoft Edge Add-ons cannot be modified.
+
+The interface follows the Edge language, with English as the fallback. Supports English, Simplified and Traditional Chinese, Japanese, Korean, German, French, Spanish and Brazilian Portuguese.

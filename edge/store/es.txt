@@ -1,0 +1,13 @@
+Annoy Killer te ayuda a ocultar elementos molestos de los sitios web y a centrarte en lo que quieres leer. Selecciona banners, ventanas emergentes, barras laterales u otras secciones que no quieras ver.
+
+Funciones
+• En una página web normal, haz clic en el icono de la extensión, señala un área y haz clic para ocultarla.
+• Haz clic en «Mostrar» para ver los elementos ocultos. Haz clic en cualquier parte de uno para restaurarlo.
+• Haz clic en «Restablecer» para ver la página original y luego en «Restaurar» para volver al estado oculto anterior.
+• Haz clic en «Listo» o pulsa Enter para guardar. Los elementos seguirán ocultos después de actualizar la página.
+
+Las reglas se guardan localmente y se sincronizan de forma predeterminada mediante Microsoft Edge Sync entre dispositivos con la misma cuenta de Microsoft y la sincronización de Edge activada. Puedes desactivar la sincronización de reglas en las opciones; los atajos permanecen locales. Sin una cuenta adicional para la extensión ni rastreadores analíticos o publicitarios. Las capturas temporales para la animación se procesan en tu dispositivo y no se suben a servidores.
+
+Es una herramienta manual para ocultar elementos, no un bloqueador de anuncios de red. No bloquea todos los anuncios ni evita muros de pago. Los cambios en un sitio pueden exigir actualizar las reglas. No funciona en páginas internas de Edge ni en Complementos de Microsoft Edge.
+
+La interfaz sigue el idioma de Edge y usa inglés si el idioma no es compatible. Incluye inglés, chino simplificado y tradicional, japonés, coreano, alemán, francés, español y portugués de Brasil.

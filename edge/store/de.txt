@@ -1,0 +1,13 @@
+Annoy Killer hilft dir, störende Elemente auf Webseiten auszublenden und dich auf die gewünschten Inhalte zu konzentrieren. Wähle Banner, Pop-ups, Seitenleisten oder andere Bereiche selbst aus.
+
+Funktionen
+• Klicke auf einer normalen Webseite auf das Erweiterungssymbol, zeige auf einen Bereich und klicke, um ihn auszublenden.
+• Mit „Anzeigen“ siehst du ausgeblendete Elemente. Klicke auf ein ausgeblendetes Element, um es wiederherzustellen.
+• Mit „Zurücksetzen“ siehst du die ursprüngliche Seite; mit „Wiederherstellen“ kehrst du zum vorherigen Zustand zurück.
+• Klicke auf „Fertig“ oder drücke Enter, um zu speichern. Ausgeblendete Elemente bleiben nach dem Neuladen verborgen.
+
+Ausblendregeln werden lokal gespeichert und standardmäßig über Microsoft Edge Sync auf Geräten mit demselben Microsoft-Konto und aktivierter Edge-Synchronisierung synchronisiert. Die Regelsynchronisierung lässt sich in den Optionen ausschalten; Tastenkürzel bleiben lokal. Kein separates Erweiterungskonto und keine Analyse- oder Werbetracker. Temporäre Seitenaufnahmen für die Auflösungsanimation werden auf deinem Gerät verarbeitet und nicht hochgeladen.
+
+Dies ist ein manueller Element-Ausblender, kein Netzwerk-Werbeblocker. Er blockiert nicht jede Werbung und umgeht keine Bezahlschranken. Nach Webseitenänderungen müssen Regeln eventuell angepasst werden. Interne Edge-Seiten und Microsoft Edge-Add-Ons werden nicht unterstützt.
+
+Die Oberfläche folgt der Edge-Sprache; ersatzweise wird Englisch verwendet. Unterstützt Englisch, vereinfachtes und traditionelles Chinesisch, Japanisch, Koreanisch, Deutsch, Französisch, Spanisch und brasilianisches Portugiesisch.
