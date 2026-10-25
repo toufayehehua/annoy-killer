@@ -1,0 +1,158 @@
+{
+  "extName": {
+    "message": "扰人杀手 – 网页元素隐藏工具"
+  },
+  "description": {
+    "message": "点击隐藏网页中的干扰元素、横幅和弹窗，自动保存隐藏规则，让网页更清爽、阅读更专注。"
+  },
+  "actionTitle": {
+    "message": "隐藏干扰项"
+  },
+  "options": {
+    "message": "选项"
+  },
+  "shortcutHeading": {
+    "message": "快捷键设置"
+  },
+  "toggleExtension": {
+    "message": "打开 / 关闭插件"
+  },
+  "instructions": {
+    "message": "使用说明"
+  },
+  "coffeePrompt": {
+    "message": "请我喝杯咖啡吧～"
+  },
+  "coffeeHeading": {
+    "message": "请我喝杯咖啡吧"
+  },
+  "wechatAlt": {
+    "message": "微信收款码"
+  },
+  "wiseAlt": {
+    "message": "WISE 收款码"
+  },
+  "wechatDonate": {
+    "message": "微信扫码打赏"
+  },
+  "donate": {
+    "message": "点此进行打赏"
+  },
+  "coffeeMenu": {
+    "message": "请杯咖啡"
+  },
+  "feedback": {
+    "message": "我要反馈"
+  },
+  "orSeparator": {
+    "message": " 或 "
+  },
+  "doubleTap": {
+    "message": "双击 $1"
+  },
+  "refine": {
+    "message": "按住 $1 键可临时切换为网页鼠标点击状态，按住 $2 键可缩小选择范围，按住 $3 键可进一步缩小范围。"
+  },
+  "exitGuide": {
+    "message": "按 $1 或 $2 键可以退出操作模式。"
+  },
+  "exitUndo": {
+    "message": "按 $1 或 $2 键可以退出操作模式，隐藏元素自动保存。"
+  },
+  "toggleGuide": {
+    "message": "双击 $1 可打开或关闭插件。右键点击插件图标 → 选项，可修改双击按键。"
+  },
+  "selectGuide": {
+    "message": "在普通网页点击插件图标，移动鼠标选择页面区域并点击隐藏。"
+  },
+  "previewGuide": {
+    "message": "点击「显示」可预览已隐藏项目，点击已隐藏模块的任意位置可恢复该项目。"
+  },
+  "resetGuide": {
+    "message": "点击「重置」可预览页面初始状态，再点「恢复」可回到重置前的隐藏状态。"
+  },
+  "closeGuide": {
+    "message": "关闭引导"
+  },
+  "toggleHidden": {
+    "message": "切换已隐藏项目显示"
+  },
+  "showHidden": {
+    "message": "显示已隐藏的模块"
+  },
+  "show": {
+    "message": "显示"
+  },
+  "reset": {
+    "message": "重置"
+  },
+  "previewInitial": {
+    "message": "预览页面初始状态"
+  },
+  "done": {
+    "message": "完成"
+  },
+  "saveChanges": {
+    "message": "保存本次修改"
+  },
+  "hiddenCount": {
+    "message": "$1个项目已隐藏"
+  },
+  "restore": {
+    "message": "恢复"
+  },
+  "restorePrevious": {
+    "message": "恢复重置前的隐藏状态"
+  },
+  "collapseHidden": {
+    "message": "收起已隐藏的模块"
+  },
+  "hide": {
+    "message": "隐藏"
+  },
+  "restoreItem": {
+    "message": "恢复此隐藏项目"
+  },
+  "restoreModule": {
+    "message": "恢复此模块"
+  },
+  "syncRules": {
+    "message": "同步屏蔽规则"
+  },
+  "syncNoSites": {
+    "message": "暂无已同步网站"
+  },
+  "syncViewAll": {
+    "message": "查看全部"
+  },
+  "syncCollapse": {
+    "message": "收起"
+  },
+  "syncStorageUsage": {
+    "message": "$1 / $2"
+  },
+  "syncLocalFiles": {
+    "message": "本地文件"
+  },
+  "syncStatusSynced": {
+    "message": "已同步"
+  },
+  "syncStatusPending": {
+    "message": "等待同步"
+  },
+  "syncStatusPaused": {
+    "message": "已暂停"
+  },
+  "syncStatusError": {
+    "message": "同步失败"
+  },
+  "syncNow": {
+    "message": "立即同步"
+  },
+  "syncingNow": {
+    "message": "同步中…"
+  },
+  "syncNote": {
+    "message": "使用 Google 同步功能"
+  }
+}
