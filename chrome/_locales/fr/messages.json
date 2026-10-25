@@ -1,0 +1,158 @@
+{
+  "extName": {
+    "message": "Annoy Killer – Masquer les distractions"
+  },
+  "description": {
+    "message": "Masquez les éléments gênants, bannières et pop-ups en un clic. Enregistrez vos choix pour une navigation plus sereine."
+  },
+  "actionTitle": {
+    "message": "Masquer les distractions"
+  },
+  "options": {
+    "message": "Options"
+  },
+  "shortcutHeading": {
+    "message": "Raccourci clavier"
+  },
+  "toggleExtension": {
+    "message": "Ouvrir / fermer l’extension"
+  },
+  "instructions": {
+    "message": "Mode d’emploi"
+  },
+  "coffeePrompt": {
+    "message": "Offrez-moi un café"
+  },
+  "coffeeHeading": {
+    "message": "Offrez-moi un café"
+  },
+  "wechatAlt": {
+    "message": "Code QR de paiement WeChat"
+  },
+  "wiseAlt": {
+    "message": "Code QR de paiement WISE"
+  },
+  "wechatDonate": {
+    "message": "Faire un don avec WeChat"
+  },
+  "donate": {
+    "message": "Faire un don"
+  },
+  "coffeeMenu": {
+    "message": "Offrir un café"
+  },
+  "feedback": {
+    "message": "Envoyer un avis"
+  },
+  "orSeparator": {
+    "message": " ou "
+  },
+  "doubleTap": {
+    "message": "Appuyer deux fois sur $1"
+  },
+  "refine": {
+    "message": "Maintenez $1 pour utiliser temporairement les clics normaux de la page. Maintenez $2 pour réduire la zone de sélection, ou $3 pour la réduire davantage."
+  },
+  "exitGuide": {
+    "message": "Appuyez sur $1 ou $2 pour quitter le mode d’opération."
+  },
+  "exitUndo": {
+    "message": "Appuyez sur $1 ou $2 pour quitter le mode d’opération. Les éléments masqués sont enregistrés automatiquement."
+  },
+  "toggleGuide": {
+    "message": "Appuyez deux fois sur $1 pour ouvrir ou fermer l’extension. Clic droit sur son icône → Options pour modifier la touche."
+  },
+  "selectGuide": {
+    "message": "Sur une page web classique, cliquez sur l’icône de l’extension, pointez une zone et cliquez pour la masquer."
+  },
+  "previewGuide": {
+    "message": "Cliquez sur « Afficher » pour voir les éléments masqués. Cliquez sur un élément masqué pour le rétablir."
+  },
+  "resetGuide": {
+    "message": "Cliquez sur « Réinitialiser » pour voir la page d’origine, puis sur « Rétablir » pour revenir à l’état précédent."
+  },
+  "closeGuide": {
+    "message": "Fermer le guide"
+  },
+  "toggleHidden": {
+    "message": "Basculer la visibilité des éléments masqués"
+  },
+  "showHidden": {
+    "message": "Afficher les éléments masqués"
+  },
+  "show": {
+    "message": "Afficher"
+  },
+  "reset": {
+    "message": "Réinitialiser"
+  },
+  "previewInitial": {
+    "message": "Voir la page d’origine"
+  },
+  "done": {
+    "message": "Terminé"
+  },
+  "saveChanges": {
+    "message": "Enregistrer les modifications"
+  },
+  "hiddenCount": {
+    "message": "Éléments masqués : $1"
+  },
+  "restore": {
+    "message": "Rétablir"
+  },
+  "restorePrevious": {
+    "message": "Rétablir l’état masqué précédent"
+  },
+  "collapseHidden": {
+    "message": "Replier les éléments masqués"
+  },
+  "hide": {
+    "message": "Masquer"
+  },
+  "restoreItem": {
+    "message": "Rétablir cet élément masqué"
+  },
+  "restoreModule": {
+    "message": "Rétablir cet élément"
+  },
+  "syncRules": {
+    "message": "Synchroniser les règles de blocage"
+  },
+  "syncNoSites": {
+    "message": "Aucun site synchronisé"
+  },
+  "syncViewAll": {
+    "message": "Tout afficher"
+  },
+  "syncCollapse": {
+    "message": "Réduire"
+  },
+  "syncStorageUsage": {
+    "message": "$1 / $2"
+  },
+  "syncLocalFiles": {
+    "message": "Fichiers locaux"
+  },
+  "syncStatusSynced": {
+    "message": "Synchronisé"
+  },
+  "syncStatusPending": {
+    "message": "En attente"
+  },
+  "syncStatusPaused": {
+    "message": "En pause"
+  },
+  "syncStatusError": {
+    "message": "Échec de la synchronisation"
+  },
+  "syncNow": {
+    "message": "Synchroniser"
+  },
+  "syncingNow": {
+    "message": "Synchronisation…"
+  },
+  "syncNote": {
+    "message": "Utilise Google Sync"
+  }
+}
