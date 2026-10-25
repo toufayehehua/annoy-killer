@@ -41,4 +41,4 @@
 
 右键点击插件图标 →「我要反馈」，或发邮件至 toufayehehua@icloud.com。
 
-开发、测试与打包方法见[开发说明](DEVELOPMENT.md)。本项目使用 [MIT 许可证](LICENSE)。
+开发、测试与打包方法见[开发说明](DEVELOPMENT.md)。本项目使用 [Apache 2.0 许可证](LICENSE)。
