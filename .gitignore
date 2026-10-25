@@ -1,0 +1,63 @@
+# Local OS, editor state and temporary files
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+.idea/
+.trae/
+*.swp
+*.swo
+*.tmp
+*.log
+*.log.*
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+/worktrees/
+/.worktrees/
+/.openai/hosting.json
+
+# Local environment and private signing material
+.env.local
+.env.*.local
+*.p12
+*.pfx
+*.p8
+*.key
+*.keystore
+*.jks
+*.mobileprovision
+*.provisionprofile
+*.keychain-db
+.secrets/
+
+# Generated installers and release archives
+*.dmg
+*.pkg
+*.ipa
+*.apk
+*.aab
+*.msix
+*.msixbundle
+*.appx
+*.appxbundle
+*.app/
+*.xcarchive/
+*.dSYM/
+/release/**/*.zip
+/release/**/*.tar
+/release/**/*.tar.gz
+/public/downloads/*.zip
+
+# Dependency downloads and test output
+# Packaged extension
+node_modules
+.pnpm-store/
+.npm/
+/coverage/
+/test-results/
+/playwright-report/
+*.tsbuildinfo
+/dist/
