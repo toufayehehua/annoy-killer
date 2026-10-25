@@ -1,0 +1,158 @@
+{
+  "extName": {
+    "message": "Annoy Killer – Oculta distracciones"
+  },
+  "description": {
+    "message": "Oculta elementos molestos, banners y ventanas emergentes con un clic. Guarda tus ajustes para navegar con más concentración."
+  },
+  "actionTitle": {
+    "message": "Ocultar distracciones"
+  },
+  "options": {
+    "message": "Opciones"
+  },
+  "shortcutHeading": {
+    "message": "Atajo de teclado"
+  },
+  "toggleExtension": {
+    "message": "Abrir / cerrar la extensión"
+  },
+  "instructions": {
+    "message": "Cómo usar"
+  },
+  "coffeePrompt": {
+    "message": "Invítame a un café"
+  },
+  "coffeeHeading": {
+    "message": "Invítame a un café"
+  },
+  "wechatAlt": {
+    "message": "Código QR de pago de WeChat"
+  },
+  "wiseAlt": {
+    "message": "Código QR de pago de WISE"
+  },
+  "wechatDonate": {
+    "message": "Donar con WeChat"
+  },
+  "donate": {
+    "message": "Donar aquí"
+  },
+  "coffeeMenu": {
+    "message": "Invitar a un café"
+  },
+  "feedback": {
+    "message": "Enviar comentarios"
+  },
+  "orSeparator": {
+    "message": " o "
+  },
+  "doubleTap": {
+    "message": "Pulsar $1 dos veces"
+  },
+  "refine": {
+    "message": "Mantén pulsado $1 para usar temporalmente los clics normales de la página. Mantén pulsado $2 para reducir el área de selección o $3 para reducirla aún más."
+  },
+  "exitGuide": {
+    "message": "Pulsa $1 o $2 para salir del modo de operación."
+  },
+  "exitUndo": {
+    "message": "Pulsa $1 o $2 para salir del modo de operación. Los elementos ocultos se guardan automáticamente."
+  },
+  "toggleGuide": {
+    "message": "Pulsa $1 dos veces para abrir o cerrar la extensión. Haz clic derecho en su icono → Opciones para cambiar la tecla."
+  },
+  "selectGuide": {
+    "message": "En una página web normal, haz clic en el icono de la extensión, apunta a un área y haz clic para ocultarla."
+  },
+  "previewGuide": {
+    "message": "Pulsa «Mostrar» para ver los elementos ocultos. Haz clic en un elemento oculto para restaurarlo."
+  },
+  "resetGuide": {
+    "message": "Pulsa «Restablecer» para ver la página original y después «Restaurar» para volver al estado oculto anterior."
+  },
+  "closeGuide": {
+    "message": "Cerrar guía"
+  },
+  "toggleHidden": {
+    "message": "Alternar visibilidad de elementos ocultos"
+  },
+  "showHidden": {
+    "message": "Mostrar elementos ocultos"
+  },
+  "show": {
+    "message": "Mostrar"
+  },
+  "reset": {
+    "message": "Restablecer"
+  },
+  "previewInitial": {
+    "message": "Ver página original"
+  },
+  "done": {
+    "message": "Listo"
+  },
+  "saveChanges": {
+    "message": "Guardar cambios"
+  },
+  "hiddenCount": {
+    "message": "Elementos ocultos: $1"
+  },
+  "restore": {
+    "message": "Restaurar"
+  },
+  "restorePrevious": {
+    "message": "Restaurar estado oculto anterior"
+  },
+  "collapseHidden": {
+    "message": "Plegar elementos ocultos"
+  },
+  "hide": {
+    "message": "Ocultar"
+  },
+  "restoreItem": {
+    "message": "Restaurar este elemento oculto"
+  },
+  "restoreModule": {
+    "message": "Restaurar este elemento"
+  },
+  "syncRules": {
+    "message": "Sincronizar reglas de bloqueo"
+  },
+  "syncNoSites": {
+    "message": "No hay sitios sincronizados"
+  },
+  "syncViewAll": {
+    "message": "Ver todos"
+  },
+  "syncCollapse": {
+    "message": "Contraer"
+  },
+  "syncStorageUsage": {
+    "message": "$1 / $2"
+  },
+  "syncLocalFiles": {
+    "message": "Archivos locales"
+  },
+  "syncStatusSynced": {
+    "message": "Sincronizado"
+  },
+  "syncStatusPending": {
+    "message": "Pendiente"
+  },
+  "syncStatusPaused": {
+    "message": "En pausa"
+  },
+  "syncStatusError": {
+    "message": "Error de sincronización"
+  },
+  "syncNow": {
+    "message": "Sincronizar ahora"
+  },
+  "syncingNow": {
+    "message": "Sincronizando…"
+  },
+  "syncNote": {
+    "message": "Usa Microsoft Edge Sync"
+  }
+}
